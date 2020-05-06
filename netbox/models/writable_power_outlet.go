@@ -41,7 +41,7 @@ type WritablePowerOutlet struct {
 	// Connected endpoint
 	//
 	//
-	//         Return the appropriate serializer for the type of connected object.
+	// Return the appropriate serializer for the type of connected object.
 	//
 	// Read Only: true
 	ConnectedEndpoint map[string]string `json:"connected_endpoint,omitempty"`
@@ -55,7 +55,7 @@ type WritablePowerOutlet struct {
 	ConnectionStatus bool `json:"connection_status,omitempty"`
 
 	// Description
-	// Max Length: 100
+	// Max Length: 200
 	Description string `json:"description,omitempty"`
 
 	// Device
@@ -189,7 +189,7 @@ func (m *WritablePowerOutlet) validateDescription(formats strfmt.Registry) error
 		return nil
 	}
 
-	if err := validate.MaxLength("description", "body", string(m.Description), 100); err != nil {
+	if err := validate.MaxLength("description", "body", string(m.Description), 200); err != nil {
 		return err
 	}
 

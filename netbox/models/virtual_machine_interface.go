@@ -36,7 +36,7 @@ import (
 type VirtualMachineInterface struct {
 
 	// Description
-	// Max Length: 100
+	// Max Length: 200
 	Description string `json:"description,omitempty"`
 
 	// Enabled
@@ -133,7 +133,7 @@ func (m *VirtualMachineInterface) validateDescription(formats strfmt.Registry) e
 		return nil
 	}
 
-	if err := validate.MaxLength("description", "body", string(m.Description), 100); err != nil {
+	if err := validate.MaxLength("description", "body", string(m.Description), 200); err != nil {
 		return err
 	}
 
@@ -316,10 +316,12 @@ type VirtualMachineInterfaceMode struct {
 
 	// label
 	// Required: true
+	// Enum: [Access Tagged Tagged (All)]
 	Label *string `json:"label"`
 
 	// value
 	// Required: true
+	// Enum: [access tagged tagged-all]
 	Value *string `json:"value"`
 }
 
@@ -341,18 +343,92 @@ func (m *VirtualMachineInterfaceMode) Validate(formats strfmt.Registry) error {
 	return nil
 }
 
+var virtualMachineInterfaceModeTypeLabelPropEnum []interface{}
+
+func init() {
+	var res []string
+	if err := json.Unmarshal([]byte(`["Access","Tagged","Tagged (All)"]`), &res); err != nil {
+		panic(err)
+	}
+	for _, v := range res {
+		virtualMachineInterfaceModeTypeLabelPropEnum = append(virtualMachineInterfaceModeTypeLabelPropEnum, v)
+	}
+}
+
+const (
+
+	// VirtualMachineInterfaceModeLabelAccess captures enum value "Access"
+	VirtualMachineInterfaceModeLabelAccess string = "Access"
+
+	// VirtualMachineInterfaceModeLabelTagged captures enum value "Tagged"
+	VirtualMachineInterfaceModeLabelTagged string = "Tagged"
+
+	// VirtualMachineInterfaceModeLabelTaggedAll captures enum value "Tagged (All)"
+	VirtualMachineInterfaceModeLabelTaggedAll string = "Tagged (All)"
+)
+
+// prop value enum
+func (m *VirtualMachineInterfaceMode) validateLabelEnum(path, location string, value string) error {
+	if err := validate.Enum(path, location, value, virtualMachineInterfaceModeTypeLabelPropEnum); err != nil {
+		return err
+	}
+	return nil
+}
+
 func (m *VirtualMachineInterfaceMode) validateLabel(formats strfmt.Registry) error {
 
 	if err := validate.Required("mode"+"."+"label", "body", m.Label); err != nil {
 		return err
 	}
 
+	// value enum
+	if err := m.validateLabelEnum("mode"+"."+"label", "body", *m.Label); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+var virtualMachineInterfaceModeTypeValuePropEnum []interface{}
+
+func init() {
+	var res []string
+	if err := json.Unmarshal([]byte(`["access","tagged","tagged-all"]`), &res); err != nil {
+		panic(err)
+	}
+	for _, v := range res {
+		virtualMachineInterfaceModeTypeValuePropEnum = append(virtualMachineInterfaceModeTypeValuePropEnum, v)
+	}
+}
+
+const (
+
+	// VirtualMachineInterfaceModeValueAccess captures enum value "access"
+	VirtualMachineInterfaceModeValueAccess string = "access"
+
+	// VirtualMachineInterfaceModeValueTagged captures enum value "tagged"
+	VirtualMachineInterfaceModeValueTagged string = "tagged"
+
+	// VirtualMachineInterfaceModeValueTaggedAll captures enum value "tagged-all"
+	VirtualMachineInterfaceModeValueTaggedAll string = "tagged-all"
+)
+
+// prop value enum
+func (m *VirtualMachineInterfaceMode) validateValueEnum(path, location string, value string) error {
+	if err := validate.Enum(path, location, value, virtualMachineInterfaceModeTypeValuePropEnum); err != nil {
+		return err
+	}
 	return nil
 }
 
 func (m *VirtualMachineInterfaceMode) validateValue(formats strfmt.Registry) error {
 
 	if err := validate.Required("mode"+"."+"value", "body", m.Value); err != nil {
+		return err
+	}
+
+	// value enum
+	if err := m.validateValueEnum("mode"+"."+"value", "body", *m.Value); err != nil {
 		return err
 	}
 
@@ -383,10 +459,12 @@ type VirtualMachineInterfaceType struct {
 
 	// label
 	// Required: true
+	// Enum: [Virtual]
 	Label *string `json:"label"`
 
 	// value
 	// Required: true
+	// Enum: [virtual]
 	Value *string `json:"value"`
 }
 
@@ -421,18 +499,80 @@ func (m *VirtualMachineInterfaceType) Validate(formats strfmt.Registry) error {
 	return nil
 }
 
+var virtualMachineInterfaceTypeTypeLabelPropEnum []interface{}
+
+func init() {
+	var res []string
+	if err := json.Unmarshal([]byte(`["Virtual"]`), &res); err != nil {
+		panic(err)
+	}
+	for _, v := range res {
+		virtualMachineInterfaceTypeTypeLabelPropEnum = append(virtualMachineInterfaceTypeTypeLabelPropEnum, v)
+	}
+}
+
+const (
+
+	// VirtualMachineInterfaceTypeLabelVirtual captures enum value "Virtual"
+	VirtualMachineInterfaceTypeLabelVirtual string = "Virtual"
+)
+
+// prop value enum
+func (m *VirtualMachineInterfaceType) validateLabelEnum(path, location string, value string) error {
+	if err := validate.Enum(path, location, value, virtualMachineInterfaceTypeTypeLabelPropEnum); err != nil {
+		return err
+	}
+	return nil
+}
+
 func (m *VirtualMachineInterfaceType) validateLabel(formats strfmt.Registry) error {
 
 	if err := validate.Required("type"+"."+"label", "body", m.Label); err != nil {
 		return err
 	}
 
+	// value enum
+	if err := m.validateLabelEnum("type"+"."+"label", "body", *m.Label); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+var virtualMachineInterfaceTypeTypeValuePropEnum []interface{}
+
+func init() {
+	var res []string
+	if err := json.Unmarshal([]byte(`["virtual"]`), &res); err != nil {
+		panic(err)
+	}
+	for _, v := range res {
+		virtualMachineInterfaceTypeTypeValuePropEnum = append(virtualMachineInterfaceTypeTypeValuePropEnum, v)
+	}
+}
+
+const (
+
+	// VirtualMachineInterfaceTypeValueVirtual captures enum value "virtual"
+	VirtualMachineInterfaceTypeValueVirtual string = "virtual"
+)
+
+// prop value enum
+func (m *VirtualMachineInterfaceType) validateValueEnum(path, location string, value string) error {
+	if err := validate.Enum(path, location, value, virtualMachineInterfaceTypeTypeValuePropEnum); err != nil {
+		return err
+	}
 	return nil
 }
 
 func (m *VirtualMachineInterfaceType) validateValue(formats strfmt.Registry) error {
 
 	if err := validate.Required("type"+"."+"value", "body", m.Value); err != nil {
+		return err
+	}
+
+	// value enum
+	if err := m.validateValueEnum("type"+"."+"value", "body", *m.Value); err != nil {
 		return err
 	}
 

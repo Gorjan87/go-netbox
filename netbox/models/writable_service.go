@@ -44,7 +44,7 @@ type WritableService struct {
 	CustomFields interface{} `json:"custom_fields,omitempty"`
 
 	// Description
-	// Max Length: 100
+	// Max Length: 200
 	Description string `json:"description,omitempty"`
 
 	// Device
@@ -148,7 +148,7 @@ func (m *WritableService) validateDescription(formats strfmt.Registry) error {
 		return nil
 	}
 
-	if err := validate.MaxLength("description", "body", string(m.Description), 100); err != nil {
+	if err := validate.MaxLength("description", "body", string(m.Description), 200); err != nil {
 		return err
 	}
 

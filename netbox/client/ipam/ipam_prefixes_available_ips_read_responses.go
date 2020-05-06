@@ -61,14 +61,14 @@ func NewIpamPrefixesAvailableIpsReadOK() *IpamPrefixesAvailableIpsReadOK {
 IpamPrefixesAvailableIpsReadOK ipam prefixes available ips read o k
 */
 type IpamPrefixesAvailableIpsReadOK struct {
-	Payload []*models.NestedIPAddress
+	Payload []*models.AvailableIP
 }
 
 func (o *IpamPrefixesAvailableIpsReadOK) Error() string {
 	return fmt.Sprintf("[GET /ipam/prefixes/{id}/available-ips/][%d] ipamPrefixesAvailableIpsReadOK  %+v", 200, o.Payload)
 }
 
-func (o *IpamPrefixesAvailableIpsReadOK) GetPayload() []*models.NestedIPAddress {
+func (o *IpamPrefixesAvailableIpsReadOK) GetPayload() []*models.AvailableIP {
 	return o.Payload
 }
 

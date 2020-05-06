@@ -21,6 +21,8 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"encoding/json"
+
 	strfmt "github.com/go-openapi/strfmt"
 
 	"github.com/go-openapi/errors"
@@ -173,10 +175,12 @@ type NestedPowerPortConnectionStatus struct {
 
 	// label
 	// Required: true
+	// Enum: [Not Connected Connected]
 	Label *string `json:"label"`
 
 	// value
 	// Required: true
+	// Enum: [false true]
 	Value *bool `json:"value"`
 }
 
@@ -198,18 +202,77 @@ func (m *NestedPowerPortConnectionStatus) Validate(formats strfmt.Registry) erro
 	return nil
 }
 
+var nestedPowerPortConnectionStatusTypeLabelPropEnum []interface{}
+
+func init() {
+	var res []string
+	if err := json.Unmarshal([]byte(`["Not Connected","Connected"]`), &res); err != nil {
+		panic(err)
+	}
+	for _, v := range res {
+		nestedPowerPortConnectionStatusTypeLabelPropEnum = append(nestedPowerPortConnectionStatusTypeLabelPropEnum, v)
+	}
+}
+
+const (
+
+	// NestedPowerPortConnectionStatusLabelNotConnected captures enum value "Not Connected"
+	NestedPowerPortConnectionStatusLabelNotConnected string = "Not Connected"
+
+	// NestedPowerPortConnectionStatusLabelConnected captures enum value "Connected"
+	NestedPowerPortConnectionStatusLabelConnected string = "Connected"
+)
+
+// prop value enum
+func (m *NestedPowerPortConnectionStatus) validateLabelEnum(path, location string, value string) error {
+	if err := validate.Enum(path, location, value, nestedPowerPortConnectionStatusTypeLabelPropEnum); err != nil {
+		return err
+	}
+	return nil
+}
+
 func (m *NestedPowerPortConnectionStatus) validateLabel(formats strfmt.Registry) error {
 
 	if err := validate.Required("connection_status"+"."+"label", "body", m.Label); err != nil {
 		return err
 	}
 
+	// value enum
+	if err := m.validateLabelEnum("connection_status"+"."+"label", "body", *m.Label); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+var nestedPowerPortConnectionStatusTypeValuePropEnum []interface{}
+
+func init() {
+	var res []bool
+	if err := json.Unmarshal([]byte(`[false,true]`), &res); err != nil {
+		panic(err)
+	}
+	for _, v := range res {
+		nestedPowerPortConnectionStatusTypeValuePropEnum = append(nestedPowerPortConnectionStatusTypeValuePropEnum, v)
+	}
+}
+
+// prop value enum
+func (m *NestedPowerPortConnectionStatus) validateValueEnum(path, location string, value bool) error {
+	if err := validate.Enum(path, location, value, nestedPowerPortConnectionStatusTypeValuePropEnum); err != nil {
+		return err
+	}
 	return nil
 }
 
 func (m *NestedPowerPortConnectionStatus) validateValue(formats strfmt.Registry) error {
 
 	if err := validate.Required("connection_status"+"."+"value", "body", m.Value); err != nil {
+		return err
+	}
+
+	// value enum
+	if err := m.validateValueEnum("connection_status"+"."+"value", "body", *m.Value); err != nil {
 		return err
 	}
 

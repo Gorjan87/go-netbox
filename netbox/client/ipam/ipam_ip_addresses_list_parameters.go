@@ -93,17 +93,34 @@ type IpamIPAddressesListParams struct {
 	DeviceID *string
 	/*DNSName*/
 	DNSName *string
+	/*DNSNameIc*/
+	DNSNameIc *string
+	/*DNSNameIe*/
+	DNSNameIe *string
+	/*DNSNameIew*/
+	DNSNameIew *string
+	/*DNSNameIsw*/
+	DNSNameIsw *string
+	/*DNSNamen*/
+	DNSNamen *string
+	/*DNSNameNic*/
+	DNSNameNic *string
+	/*DNSNameNie*/
+	DNSNameNie *string
+	/*DNSNameNiew*/
+	DNSNameNiew *string
+	/*DNSNameNisw*/
+	DNSNameNisw *string
 	/*Family*/
-	Family *string
-	/*IDIn
-	  Multiple values may be separated by commas.
-
-	*/
-	IDIn *string
+	Family *float64
 	/*Interface*/
 	Interface *string
+	/*Interfacen*/
+	Interfacen *string
 	/*InterfaceID*/
 	InterfaceID *string
+	/*InterfaceIDn*/
+	InterfaceIDn *string
 	/*LastUpdated*/
 	LastUpdated *string
 	/*LastUpdatedGte*/
@@ -128,26 +145,48 @@ type IpamIPAddressesListParams struct {
 	Q *string
 	/*Role*/
 	Role *string
+	/*Rolen*/
+	Rolen *string
 	/*Status*/
 	Status *string
+	/*Statusn*/
+	Statusn *string
 	/*Tag*/
 	Tag *string
+	/*Tagn*/
+	Tagn *string
 	/*Tenant*/
 	Tenant *string
+	/*Tenantn*/
+	Tenantn *string
 	/*TenantGroup*/
 	TenantGroup *string
+	/*TenantGroupn*/
+	TenantGroupn *string
 	/*TenantGroupID*/
 	TenantGroupID *string
+	/*TenantGroupIDn*/
+	TenantGroupIDn *string
 	/*TenantID*/
 	TenantID *string
+	/*TenantIDn*/
+	TenantIDn *string
 	/*VirtualMachine*/
 	VirtualMachine *string
+	/*VirtualMachinen*/
+	VirtualMachinen *string
 	/*VirtualMachineID*/
 	VirtualMachineID *string
+	/*VirtualMachineIDn*/
+	VirtualMachineIDn *string
 	/*Vrf*/
 	Vrf *string
+	/*Vrfn*/
+	Vrfn *string
 	/*VrfID*/
 	VrfID *string
+	/*VrfIDn*/
+	VrfIDn *string
 
 	timeout    time.Duration
 	Context    context.Context
@@ -275,26 +314,114 @@ func (o *IpamIPAddressesListParams) SetDNSName(dNSName *string) {
 	o.DNSName = dNSName
 }
 
+// WithDNSNameIc adds the dNSNameIc to the ipam ip addresses list params
+func (o *IpamIPAddressesListParams) WithDNSNameIc(dNSNameIc *string) *IpamIPAddressesListParams {
+	o.SetDNSNameIc(dNSNameIc)
+	return o
+}
+
+// SetDNSNameIc adds the dnsNameIc to the ipam ip addresses list params
+func (o *IpamIPAddressesListParams) SetDNSNameIc(dNSNameIc *string) {
+	o.DNSNameIc = dNSNameIc
+}
+
+// WithDNSNameIe adds the dNSNameIe to the ipam ip addresses list params
+func (o *IpamIPAddressesListParams) WithDNSNameIe(dNSNameIe *string) *IpamIPAddressesListParams {
+	o.SetDNSNameIe(dNSNameIe)
+	return o
+}
+
+// SetDNSNameIe adds the dnsNameIe to the ipam ip addresses list params
+func (o *IpamIPAddressesListParams) SetDNSNameIe(dNSNameIe *string) {
+	o.DNSNameIe = dNSNameIe
+}
+
+// WithDNSNameIew adds the dNSNameIew to the ipam ip addresses list params
+func (o *IpamIPAddressesListParams) WithDNSNameIew(dNSNameIew *string) *IpamIPAddressesListParams {
+	o.SetDNSNameIew(dNSNameIew)
+	return o
+}
+
+// SetDNSNameIew adds the dnsNameIew to the ipam ip addresses list params
+func (o *IpamIPAddressesListParams) SetDNSNameIew(dNSNameIew *string) {
+	o.DNSNameIew = dNSNameIew
+}
+
+// WithDNSNameIsw adds the dNSNameIsw to the ipam ip addresses list params
+func (o *IpamIPAddressesListParams) WithDNSNameIsw(dNSNameIsw *string) *IpamIPAddressesListParams {
+	o.SetDNSNameIsw(dNSNameIsw)
+	return o
+}
+
+// SetDNSNameIsw adds the dnsNameIsw to the ipam ip addresses list params
+func (o *IpamIPAddressesListParams) SetDNSNameIsw(dNSNameIsw *string) {
+	o.DNSNameIsw = dNSNameIsw
+}
+
+// WithDNSNamen adds the dNSNamen to the ipam ip addresses list params
+func (o *IpamIPAddressesListParams) WithDNSNamen(dNSNamen *string) *IpamIPAddressesListParams {
+	o.SetDNSNamen(dNSNamen)
+	return o
+}
+
+// SetDNSNamen adds the dnsNameN to the ipam ip addresses list params
+func (o *IpamIPAddressesListParams) SetDNSNamen(dNSNamen *string) {
+	o.DNSNamen = dNSNamen
+}
+
+// WithDNSNameNic adds the dNSNameNic to the ipam ip addresses list params
+func (o *IpamIPAddressesListParams) WithDNSNameNic(dNSNameNic *string) *IpamIPAddressesListParams {
+	o.SetDNSNameNic(dNSNameNic)
+	return o
+}
+
+// SetDNSNameNic adds the dnsNameNic to the ipam ip addresses list params
+func (o *IpamIPAddressesListParams) SetDNSNameNic(dNSNameNic *string) {
+	o.DNSNameNic = dNSNameNic
+}
+
+// WithDNSNameNie adds the dNSNameNie to the ipam ip addresses list params
+func (o *IpamIPAddressesListParams) WithDNSNameNie(dNSNameNie *string) *IpamIPAddressesListParams {
+	o.SetDNSNameNie(dNSNameNie)
+	return o
+}
+
+// SetDNSNameNie adds the dnsNameNie to the ipam ip addresses list params
+func (o *IpamIPAddressesListParams) SetDNSNameNie(dNSNameNie *string) {
+	o.DNSNameNie = dNSNameNie
+}
+
+// WithDNSNameNiew adds the dNSNameNiew to the ipam ip addresses list params
+func (o *IpamIPAddressesListParams) WithDNSNameNiew(dNSNameNiew *string) *IpamIPAddressesListParams {
+	o.SetDNSNameNiew(dNSNameNiew)
+	return o
+}
+
+// SetDNSNameNiew adds the dnsNameNiew to the ipam ip addresses list params
+func (o *IpamIPAddressesListParams) SetDNSNameNiew(dNSNameNiew *string) {
+	o.DNSNameNiew = dNSNameNiew
+}
+
+// WithDNSNameNisw adds the dNSNameNisw to the ipam ip addresses list params
+func (o *IpamIPAddressesListParams) WithDNSNameNisw(dNSNameNisw *string) *IpamIPAddressesListParams {
+	o.SetDNSNameNisw(dNSNameNisw)
+	return o
+}
+
+// SetDNSNameNisw adds the dnsNameNisw to the ipam ip addresses list params
+func (o *IpamIPAddressesListParams) SetDNSNameNisw(dNSNameNisw *string) {
+	o.DNSNameNisw = dNSNameNisw
+}
+
 // WithFamily adds the family to the ipam ip addresses list params
-func (o *IpamIPAddressesListParams) WithFamily(family *string) *IpamIPAddressesListParams {
+func (o *IpamIPAddressesListParams) WithFamily(family *float64) *IpamIPAddressesListParams {
 	o.SetFamily(family)
 	return o
 }
 
 // SetFamily adds the family to the ipam ip addresses list params
-func (o *IpamIPAddressesListParams) SetFamily(family *string) {
+func (o *IpamIPAddressesListParams) SetFamily(family *float64) {
 	o.Family = family
-}
-
-// WithIDIn adds the iDIn to the ipam ip addresses list params
-func (o *IpamIPAddressesListParams) WithIDIn(iDIn *string) *IpamIPAddressesListParams {
-	o.SetIDIn(iDIn)
-	return o
-}
-
-// SetIDIn adds the idIn to the ipam ip addresses list params
-func (o *IpamIPAddressesListParams) SetIDIn(iDIn *string) {
-	o.IDIn = iDIn
 }
 
 // WithInterface adds the interfaceVar to the ipam ip addresses list params
@@ -308,6 +435,17 @@ func (o *IpamIPAddressesListParams) SetInterface(interfaceVar *string) {
 	o.Interface = interfaceVar
 }
 
+// WithInterfacen adds the interfacen to the ipam ip addresses list params
+func (o *IpamIPAddressesListParams) WithInterfacen(interfacen *string) *IpamIPAddressesListParams {
+	o.SetInterfacen(interfacen)
+	return o
+}
+
+// SetInterfacen adds the interfaceN to the ipam ip addresses list params
+func (o *IpamIPAddressesListParams) SetInterfacen(interfacen *string) {
+	o.Interfacen = interfacen
+}
+
 // WithInterfaceID adds the interfaceID to the ipam ip addresses list params
 func (o *IpamIPAddressesListParams) WithInterfaceID(interfaceID *string) *IpamIPAddressesListParams {
 	o.SetInterfaceID(interfaceID)
@@ -317,6 +455,17 @@ func (o *IpamIPAddressesListParams) WithInterfaceID(interfaceID *string) *IpamIP
 // SetInterfaceID adds the interfaceId to the ipam ip addresses list params
 func (o *IpamIPAddressesListParams) SetInterfaceID(interfaceID *string) {
 	o.InterfaceID = interfaceID
+}
+
+// WithInterfaceIDn adds the interfaceIDn to the ipam ip addresses list params
+func (o *IpamIPAddressesListParams) WithInterfaceIDn(interfaceIDn *string) *IpamIPAddressesListParams {
+	o.SetInterfaceIDn(interfaceIDn)
+	return o
+}
+
+// SetInterfaceIDn adds the interfaceIdN to the ipam ip addresses list params
+func (o *IpamIPAddressesListParams) SetInterfaceIDn(interfaceIDn *string) {
+	o.InterfaceIDn = interfaceIDn
 }
 
 // WithLastUpdated adds the lastUpdated to the ipam ip addresses list params
@@ -418,6 +567,17 @@ func (o *IpamIPAddressesListParams) SetRole(role *string) {
 	o.Role = role
 }
 
+// WithRolen adds the rolen to the ipam ip addresses list params
+func (o *IpamIPAddressesListParams) WithRolen(rolen *string) *IpamIPAddressesListParams {
+	o.SetRolen(rolen)
+	return o
+}
+
+// SetRolen adds the roleN to the ipam ip addresses list params
+func (o *IpamIPAddressesListParams) SetRolen(rolen *string) {
+	o.Rolen = rolen
+}
+
 // WithStatus adds the status to the ipam ip addresses list params
 func (o *IpamIPAddressesListParams) WithStatus(status *string) *IpamIPAddressesListParams {
 	o.SetStatus(status)
@@ -427,6 +587,17 @@ func (o *IpamIPAddressesListParams) WithStatus(status *string) *IpamIPAddressesL
 // SetStatus adds the status to the ipam ip addresses list params
 func (o *IpamIPAddressesListParams) SetStatus(status *string) {
 	o.Status = status
+}
+
+// WithStatusn adds the statusn to the ipam ip addresses list params
+func (o *IpamIPAddressesListParams) WithStatusn(statusn *string) *IpamIPAddressesListParams {
+	o.SetStatusn(statusn)
+	return o
+}
+
+// SetStatusn adds the statusN to the ipam ip addresses list params
+func (o *IpamIPAddressesListParams) SetStatusn(statusn *string) {
+	o.Statusn = statusn
 }
 
 // WithTag adds the tag to the ipam ip addresses list params
@@ -440,6 +611,17 @@ func (o *IpamIPAddressesListParams) SetTag(tag *string) {
 	o.Tag = tag
 }
 
+// WithTagn adds the tagn to the ipam ip addresses list params
+func (o *IpamIPAddressesListParams) WithTagn(tagn *string) *IpamIPAddressesListParams {
+	o.SetTagn(tagn)
+	return o
+}
+
+// SetTagn adds the tagN to the ipam ip addresses list params
+func (o *IpamIPAddressesListParams) SetTagn(tagn *string) {
+	o.Tagn = tagn
+}
+
 // WithTenant adds the tenant to the ipam ip addresses list params
 func (o *IpamIPAddressesListParams) WithTenant(tenant *string) *IpamIPAddressesListParams {
 	o.SetTenant(tenant)
@@ -449,6 +631,17 @@ func (o *IpamIPAddressesListParams) WithTenant(tenant *string) *IpamIPAddressesL
 // SetTenant adds the tenant to the ipam ip addresses list params
 func (o *IpamIPAddressesListParams) SetTenant(tenant *string) {
 	o.Tenant = tenant
+}
+
+// WithTenantn adds the tenantn to the ipam ip addresses list params
+func (o *IpamIPAddressesListParams) WithTenantn(tenantn *string) *IpamIPAddressesListParams {
+	o.SetTenantn(tenantn)
+	return o
+}
+
+// SetTenantn adds the tenantN to the ipam ip addresses list params
+func (o *IpamIPAddressesListParams) SetTenantn(tenantn *string) {
+	o.Tenantn = tenantn
 }
 
 // WithTenantGroup adds the tenantGroup to the ipam ip addresses list params
@@ -462,6 +655,17 @@ func (o *IpamIPAddressesListParams) SetTenantGroup(tenantGroup *string) {
 	o.TenantGroup = tenantGroup
 }
 
+// WithTenantGroupn adds the tenantGroupn to the ipam ip addresses list params
+func (o *IpamIPAddressesListParams) WithTenantGroupn(tenantGroupn *string) *IpamIPAddressesListParams {
+	o.SetTenantGroupn(tenantGroupn)
+	return o
+}
+
+// SetTenantGroupn adds the tenantGroupN to the ipam ip addresses list params
+func (o *IpamIPAddressesListParams) SetTenantGroupn(tenantGroupn *string) {
+	o.TenantGroupn = tenantGroupn
+}
+
 // WithTenantGroupID adds the tenantGroupID to the ipam ip addresses list params
 func (o *IpamIPAddressesListParams) WithTenantGroupID(tenantGroupID *string) *IpamIPAddressesListParams {
 	o.SetTenantGroupID(tenantGroupID)
@@ -471,6 +675,17 @@ func (o *IpamIPAddressesListParams) WithTenantGroupID(tenantGroupID *string) *Ip
 // SetTenantGroupID adds the tenantGroupId to the ipam ip addresses list params
 func (o *IpamIPAddressesListParams) SetTenantGroupID(tenantGroupID *string) {
 	o.TenantGroupID = tenantGroupID
+}
+
+// WithTenantGroupIDn adds the tenantGroupIDn to the ipam ip addresses list params
+func (o *IpamIPAddressesListParams) WithTenantGroupIDn(tenantGroupIDn *string) *IpamIPAddressesListParams {
+	o.SetTenantGroupIDn(tenantGroupIDn)
+	return o
+}
+
+// SetTenantGroupIDn adds the tenantGroupIdN to the ipam ip addresses list params
+func (o *IpamIPAddressesListParams) SetTenantGroupIDn(tenantGroupIDn *string) {
+	o.TenantGroupIDn = tenantGroupIDn
 }
 
 // WithTenantID adds the tenantID to the ipam ip addresses list params
@@ -484,6 +699,17 @@ func (o *IpamIPAddressesListParams) SetTenantID(tenantID *string) {
 	o.TenantID = tenantID
 }
 
+// WithTenantIDn adds the tenantIDn to the ipam ip addresses list params
+func (o *IpamIPAddressesListParams) WithTenantIDn(tenantIDn *string) *IpamIPAddressesListParams {
+	o.SetTenantIDn(tenantIDn)
+	return o
+}
+
+// SetTenantIDn adds the tenantIdN to the ipam ip addresses list params
+func (o *IpamIPAddressesListParams) SetTenantIDn(tenantIDn *string) {
+	o.TenantIDn = tenantIDn
+}
+
 // WithVirtualMachine adds the virtualMachine to the ipam ip addresses list params
 func (o *IpamIPAddressesListParams) WithVirtualMachine(virtualMachine *string) *IpamIPAddressesListParams {
 	o.SetVirtualMachine(virtualMachine)
@@ -493,6 +719,17 @@ func (o *IpamIPAddressesListParams) WithVirtualMachine(virtualMachine *string) *
 // SetVirtualMachine adds the virtualMachine to the ipam ip addresses list params
 func (o *IpamIPAddressesListParams) SetVirtualMachine(virtualMachine *string) {
 	o.VirtualMachine = virtualMachine
+}
+
+// WithVirtualMachinen adds the virtualMachinen to the ipam ip addresses list params
+func (o *IpamIPAddressesListParams) WithVirtualMachinen(virtualMachinen *string) *IpamIPAddressesListParams {
+	o.SetVirtualMachinen(virtualMachinen)
+	return o
+}
+
+// SetVirtualMachinen adds the virtualMachineN to the ipam ip addresses list params
+func (o *IpamIPAddressesListParams) SetVirtualMachinen(virtualMachinen *string) {
+	o.VirtualMachinen = virtualMachinen
 }
 
 // WithVirtualMachineID adds the virtualMachineID to the ipam ip addresses list params
@@ -506,6 +743,17 @@ func (o *IpamIPAddressesListParams) SetVirtualMachineID(virtualMachineID *string
 	o.VirtualMachineID = virtualMachineID
 }
 
+// WithVirtualMachineIDn adds the virtualMachineIDn to the ipam ip addresses list params
+func (o *IpamIPAddressesListParams) WithVirtualMachineIDn(virtualMachineIDn *string) *IpamIPAddressesListParams {
+	o.SetVirtualMachineIDn(virtualMachineIDn)
+	return o
+}
+
+// SetVirtualMachineIDn adds the virtualMachineIdN to the ipam ip addresses list params
+func (o *IpamIPAddressesListParams) SetVirtualMachineIDn(virtualMachineIDn *string) {
+	o.VirtualMachineIDn = virtualMachineIDn
+}
+
 // WithVrf adds the vrf to the ipam ip addresses list params
 func (o *IpamIPAddressesListParams) WithVrf(vrf *string) *IpamIPAddressesListParams {
 	o.SetVrf(vrf)
@@ -517,6 +765,17 @@ func (o *IpamIPAddressesListParams) SetVrf(vrf *string) {
 	o.Vrf = vrf
 }
 
+// WithVrfn adds the vrfn to the ipam ip addresses list params
+func (o *IpamIPAddressesListParams) WithVrfn(vrfn *string) *IpamIPAddressesListParams {
+	o.SetVrfn(vrfn)
+	return o
+}
+
+// SetVrfn adds the vrfN to the ipam ip addresses list params
+func (o *IpamIPAddressesListParams) SetVrfn(vrfn *string) {
+	o.Vrfn = vrfn
+}
+
 // WithVrfID adds the vrfID to the ipam ip addresses list params
 func (o *IpamIPAddressesListParams) WithVrfID(vrfID *string) *IpamIPAddressesListParams {
 	o.SetVrfID(vrfID)
@@ -526,6 +785,17 @@ func (o *IpamIPAddressesListParams) WithVrfID(vrfID *string) *IpamIPAddressesLis
 // SetVrfID adds the vrfId to the ipam ip addresses list params
 func (o *IpamIPAddressesListParams) SetVrfID(vrfID *string) {
 	o.VrfID = vrfID
+}
+
+// WithVrfIDn adds the vrfIDn to the ipam ip addresses list params
+func (o *IpamIPAddressesListParams) WithVrfIDn(vrfIDn *string) *IpamIPAddressesListParams {
+	o.SetVrfIDn(vrfIDn)
+	return o
+}
+
+// SetVrfIDn adds the vrfIdN to the ipam ip addresses list params
+func (o *IpamIPAddressesListParams) SetVrfIDn(vrfIDn *string) {
+	o.VrfIDn = vrfIDn
 }
 
 // WriteToRequest writes these params to a swagger request
@@ -664,32 +934,160 @@ func (o *IpamIPAddressesListParams) WriteToRequest(r runtime.ClientRequest, reg 
 
 	}
 
-	if o.Family != nil {
+	if o.DNSNameIc != nil {
 
-		// query param family
-		var qrFamily string
-		if o.Family != nil {
-			qrFamily = *o.Family
+		// query param dns_name__ic
+		var qrDNSNameIc string
+		if o.DNSNameIc != nil {
+			qrDNSNameIc = *o.DNSNameIc
 		}
-		qFamily := qrFamily
-		if qFamily != "" {
-			if err := r.SetQueryParam("family", qFamily); err != nil {
+		qDNSNameIc := qrDNSNameIc
+		if qDNSNameIc != "" {
+			if err := r.SetQueryParam("dns_name__ic", qDNSNameIc); err != nil {
 				return err
 			}
 		}
 
 	}
 
-	if o.IDIn != nil {
+	if o.DNSNameIe != nil {
 
-		// query param id__in
-		var qrIDIn string
-		if o.IDIn != nil {
-			qrIDIn = *o.IDIn
+		// query param dns_name__ie
+		var qrDNSNameIe string
+		if o.DNSNameIe != nil {
+			qrDNSNameIe = *o.DNSNameIe
 		}
-		qIDIn := qrIDIn
-		if qIDIn != "" {
-			if err := r.SetQueryParam("id__in", qIDIn); err != nil {
+		qDNSNameIe := qrDNSNameIe
+		if qDNSNameIe != "" {
+			if err := r.SetQueryParam("dns_name__ie", qDNSNameIe); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.DNSNameIew != nil {
+
+		// query param dns_name__iew
+		var qrDNSNameIew string
+		if o.DNSNameIew != nil {
+			qrDNSNameIew = *o.DNSNameIew
+		}
+		qDNSNameIew := qrDNSNameIew
+		if qDNSNameIew != "" {
+			if err := r.SetQueryParam("dns_name__iew", qDNSNameIew); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.DNSNameIsw != nil {
+
+		// query param dns_name__isw
+		var qrDNSNameIsw string
+		if o.DNSNameIsw != nil {
+			qrDNSNameIsw = *o.DNSNameIsw
+		}
+		qDNSNameIsw := qrDNSNameIsw
+		if qDNSNameIsw != "" {
+			if err := r.SetQueryParam("dns_name__isw", qDNSNameIsw); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.DNSNamen != nil {
+
+		// query param dns_name__n
+		var qrDNSNamen string
+		if o.DNSNamen != nil {
+			qrDNSNamen = *o.DNSNamen
+		}
+		qDNSNamen := qrDNSNamen
+		if qDNSNamen != "" {
+			if err := r.SetQueryParam("dns_name__n", qDNSNamen); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.DNSNameNic != nil {
+
+		// query param dns_name__nic
+		var qrDNSNameNic string
+		if o.DNSNameNic != nil {
+			qrDNSNameNic = *o.DNSNameNic
+		}
+		qDNSNameNic := qrDNSNameNic
+		if qDNSNameNic != "" {
+			if err := r.SetQueryParam("dns_name__nic", qDNSNameNic); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.DNSNameNie != nil {
+
+		// query param dns_name__nie
+		var qrDNSNameNie string
+		if o.DNSNameNie != nil {
+			qrDNSNameNie = *o.DNSNameNie
+		}
+		qDNSNameNie := qrDNSNameNie
+		if qDNSNameNie != "" {
+			if err := r.SetQueryParam("dns_name__nie", qDNSNameNie); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.DNSNameNiew != nil {
+
+		// query param dns_name__niew
+		var qrDNSNameNiew string
+		if o.DNSNameNiew != nil {
+			qrDNSNameNiew = *o.DNSNameNiew
+		}
+		qDNSNameNiew := qrDNSNameNiew
+		if qDNSNameNiew != "" {
+			if err := r.SetQueryParam("dns_name__niew", qDNSNameNiew); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.DNSNameNisw != nil {
+
+		// query param dns_name__nisw
+		var qrDNSNameNisw string
+		if o.DNSNameNisw != nil {
+			qrDNSNameNisw = *o.DNSNameNisw
+		}
+		qDNSNameNisw := qrDNSNameNisw
+		if qDNSNameNisw != "" {
+			if err := r.SetQueryParam("dns_name__nisw", qDNSNameNisw); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.Family != nil {
+
+		// query param family
+		var qrFamily float64
+		if o.Family != nil {
+			qrFamily = *o.Family
+		}
+		qFamily := swag.FormatFloat64(qrFamily)
+		if qFamily != "" {
+			if err := r.SetQueryParam("family", qFamily); err != nil {
 				return err
 			}
 		}
@@ -712,6 +1110,22 @@ func (o *IpamIPAddressesListParams) WriteToRequest(r runtime.ClientRequest, reg 
 
 	}
 
+	if o.Interfacen != nil {
+
+		// query param interface__n
+		var qrInterfacen string
+		if o.Interfacen != nil {
+			qrInterfacen = *o.Interfacen
+		}
+		qInterfacen := qrInterfacen
+		if qInterfacen != "" {
+			if err := r.SetQueryParam("interface__n", qInterfacen); err != nil {
+				return err
+			}
+		}
+
+	}
+
 	if o.InterfaceID != nil {
 
 		// query param interface_id
@@ -722,6 +1136,22 @@ func (o *IpamIPAddressesListParams) WriteToRequest(r runtime.ClientRequest, reg 
 		qInterfaceID := qrInterfaceID
 		if qInterfaceID != "" {
 			if err := r.SetQueryParam("interface_id", qInterfaceID); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.InterfaceIDn != nil {
+
+		// query param interface_id__n
+		var qrInterfaceIDn string
+		if o.InterfaceIDn != nil {
+			qrInterfaceIDn = *o.InterfaceIDn
+		}
+		qInterfaceIDn := qrInterfaceIDn
+		if qInterfaceIDn != "" {
+			if err := r.SetQueryParam("interface_id__n", qInterfaceIDn); err != nil {
 				return err
 			}
 		}
@@ -872,6 +1302,22 @@ func (o *IpamIPAddressesListParams) WriteToRequest(r runtime.ClientRequest, reg 
 
 	}
 
+	if o.Rolen != nil {
+
+		// query param role__n
+		var qrRolen string
+		if o.Rolen != nil {
+			qrRolen = *o.Rolen
+		}
+		qRolen := qrRolen
+		if qRolen != "" {
+			if err := r.SetQueryParam("role__n", qRolen); err != nil {
+				return err
+			}
+		}
+
+	}
+
 	if o.Status != nil {
 
 		// query param status
@@ -882,6 +1328,22 @@ func (o *IpamIPAddressesListParams) WriteToRequest(r runtime.ClientRequest, reg 
 		qStatus := qrStatus
 		if qStatus != "" {
 			if err := r.SetQueryParam("status", qStatus); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.Statusn != nil {
+
+		// query param status__n
+		var qrStatusn string
+		if o.Statusn != nil {
+			qrStatusn = *o.Statusn
+		}
+		qStatusn := qrStatusn
+		if qStatusn != "" {
+			if err := r.SetQueryParam("status__n", qStatusn); err != nil {
 				return err
 			}
 		}
@@ -904,6 +1366,22 @@ func (o *IpamIPAddressesListParams) WriteToRequest(r runtime.ClientRequest, reg 
 
 	}
 
+	if o.Tagn != nil {
+
+		// query param tag__n
+		var qrTagn string
+		if o.Tagn != nil {
+			qrTagn = *o.Tagn
+		}
+		qTagn := qrTagn
+		if qTagn != "" {
+			if err := r.SetQueryParam("tag__n", qTagn); err != nil {
+				return err
+			}
+		}
+
+	}
+
 	if o.Tenant != nil {
 
 		// query param tenant
@@ -914,6 +1392,22 @@ func (o *IpamIPAddressesListParams) WriteToRequest(r runtime.ClientRequest, reg 
 		qTenant := qrTenant
 		if qTenant != "" {
 			if err := r.SetQueryParam("tenant", qTenant); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.Tenantn != nil {
+
+		// query param tenant__n
+		var qrTenantn string
+		if o.Tenantn != nil {
+			qrTenantn = *o.Tenantn
+		}
+		qTenantn := qrTenantn
+		if qTenantn != "" {
+			if err := r.SetQueryParam("tenant__n", qTenantn); err != nil {
 				return err
 			}
 		}
@@ -936,6 +1430,22 @@ func (o *IpamIPAddressesListParams) WriteToRequest(r runtime.ClientRequest, reg 
 
 	}
 
+	if o.TenantGroupn != nil {
+
+		// query param tenant_group__n
+		var qrTenantGroupn string
+		if o.TenantGroupn != nil {
+			qrTenantGroupn = *o.TenantGroupn
+		}
+		qTenantGroupn := qrTenantGroupn
+		if qTenantGroupn != "" {
+			if err := r.SetQueryParam("tenant_group__n", qTenantGroupn); err != nil {
+				return err
+			}
+		}
+
+	}
+
 	if o.TenantGroupID != nil {
 
 		// query param tenant_group_id
@@ -946,6 +1456,22 @@ func (o *IpamIPAddressesListParams) WriteToRequest(r runtime.ClientRequest, reg 
 		qTenantGroupID := qrTenantGroupID
 		if qTenantGroupID != "" {
 			if err := r.SetQueryParam("tenant_group_id", qTenantGroupID); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.TenantGroupIDn != nil {
+
+		// query param tenant_group_id__n
+		var qrTenantGroupIDn string
+		if o.TenantGroupIDn != nil {
+			qrTenantGroupIDn = *o.TenantGroupIDn
+		}
+		qTenantGroupIDn := qrTenantGroupIDn
+		if qTenantGroupIDn != "" {
+			if err := r.SetQueryParam("tenant_group_id__n", qTenantGroupIDn); err != nil {
 				return err
 			}
 		}
@@ -968,6 +1494,22 @@ func (o *IpamIPAddressesListParams) WriteToRequest(r runtime.ClientRequest, reg 
 
 	}
 
+	if o.TenantIDn != nil {
+
+		// query param tenant_id__n
+		var qrTenantIDn string
+		if o.TenantIDn != nil {
+			qrTenantIDn = *o.TenantIDn
+		}
+		qTenantIDn := qrTenantIDn
+		if qTenantIDn != "" {
+			if err := r.SetQueryParam("tenant_id__n", qTenantIDn); err != nil {
+				return err
+			}
+		}
+
+	}
+
 	if o.VirtualMachine != nil {
 
 		// query param virtual_machine
@@ -978,6 +1520,22 @@ func (o *IpamIPAddressesListParams) WriteToRequest(r runtime.ClientRequest, reg 
 		qVirtualMachine := qrVirtualMachine
 		if qVirtualMachine != "" {
 			if err := r.SetQueryParam("virtual_machine", qVirtualMachine); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.VirtualMachinen != nil {
+
+		// query param virtual_machine__n
+		var qrVirtualMachinen string
+		if o.VirtualMachinen != nil {
+			qrVirtualMachinen = *o.VirtualMachinen
+		}
+		qVirtualMachinen := qrVirtualMachinen
+		if qVirtualMachinen != "" {
+			if err := r.SetQueryParam("virtual_machine__n", qVirtualMachinen); err != nil {
 				return err
 			}
 		}
@@ -1000,6 +1558,22 @@ func (o *IpamIPAddressesListParams) WriteToRequest(r runtime.ClientRequest, reg 
 
 	}
 
+	if o.VirtualMachineIDn != nil {
+
+		// query param virtual_machine_id__n
+		var qrVirtualMachineIDn string
+		if o.VirtualMachineIDn != nil {
+			qrVirtualMachineIDn = *o.VirtualMachineIDn
+		}
+		qVirtualMachineIDn := qrVirtualMachineIDn
+		if qVirtualMachineIDn != "" {
+			if err := r.SetQueryParam("virtual_machine_id__n", qVirtualMachineIDn); err != nil {
+				return err
+			}
+		}
+
+	}
+
 	if o.Vrf != nil {
 
 		// query param vrf
@@ -1016,6 +1590,22 @@ func (o *IpamIPAddressesListParams) WriteToRequest(r runtime.ClientRequest, reg 
 
 	}
 
+	if o.Vrfn != nil {
+
+		// query param vrf__n
+		var qrVrfn string
+		if o.Vrfn != nil {
+			qrVrfn = *o.Vrfn
+		}
+		qVrfn := qrVrfn
+		if qVrfn != "" {
+			if err := r.SetQueryParam("vrf__n", qVrfn); err != nil {
+				return err
+			}
+		}
+
+	}
+
 	if o.VrfID != nil {
 
 		// query param vrf_id
@@ -1026,6 +1616,22 @@ func (o *IpamIPAddressesListParams) WriteToRequest(r runtime.ClientRequest, reg 
 		qVrfID := qrVrfID
 		if qVrfID != "" {
 			if err := r.SetQueryParam("vrf_id", qVrfID); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.VrfIDn != nil {
+
+		// query param vrf_id__n
+		var qrVrfIDn string
+		if o.VrfIDn != nil {
+			qrVrfIDn = *o.VrfIDn
+		}
+		qVrfIDn := qrVrfIDn
+		if qVrfIDn != "" {
+			if err := r.SetQueryParam("vrf_id__n", qVrfIDn); err != nil {
 				return err
 			}
 		}

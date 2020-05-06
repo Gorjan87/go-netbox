@@ -28,9 +28,9 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// WritableVLANGroup writable v l a n group
-// swagger:model WritableVLANGroup
-type WritableVLANGroup struct {
+// WritableTenantGroup writable tenant group
+// swagger:model WritableTenantGroup
+type WritableTenantGroup struct {
 
 	// Description
 	// Max Length: 200
@@ -46,8 +46,8 @@ type WritableVLANGroup struct {
 	// Min Length: 1
 	Name *string `json:"name"`
 
-	// Site
-	Site *int64 `json:"site,omitempty"`
+	// Parent
+	Parent *int64 `json:"parent,omitempty"`
 
 	// Slug
 	// Required: true
@@ -56,13 +56,13 @@ type WritableVLANGroup struct {
 	// Pattern: ^[-a-zA-Z0-9_]+$
 	Slug *string `json:"slug"`
 
-	// Vlan count
+	// Tenant count
 	// Read Only: true
-	VlanCount int64 `json:"vlan_count,omitempty"`
+	TenantCount int64 `json:"tenant_count,omitempty"`
 }
 
-// Validate validates this writable v l a n group
-func (m *WritableVLANGroup) Validate(formats strfmt.Registry) error {
+// Validate validates this writable tenant group
+func (m *WritableTenantGroup) Validate(formats strfmt.Registry) error {
 	var res []error
 
 	if err := m.validateDescription(formats); err != nil {
@@ -83,7 +83,7 @@ func (m *WritableVLANGroup) Validate(formats strfmt.Registry) error {
 	return nil
 }
 
-func (m *WritableVLANGroup) validateDescription(formats strfmt.Registry) error {
+func (m *WritableTenantGroup) validateDescription(formats strfmt.Registry) error {
 
 	if swag.IsZero(m.Description) { // not required
 		return nil
@@ -96,7 +96,7 @@ func (m *WritableVLANGroup) validateDescription(formats strfmt.Registry) error {
 	return nil
 }
 
-func (m *WritableVLANGroup) validateName(formats strfmt.Registry) error {
+func (m *WritableTenantGroup) validateName(formats strfmt.Registry) error {
 
 	if err := validate.Required("name", "body", m.Name); err != nil {
 		return err
@@ -113,7 +113,7 @@ func (m *WritableVLANGroup) validateName(formats strfmt.Registry) error {
 	return nil
 }
 
-func (m *WritableVLANGroup) validateSlug(formats strfmt.Registry) error {
+func (m *WritableTenantGroup) validateSlug(formats strfmt.Registry) error {
 
 	if err := validate.Required("slug", "body", m.Slug); err != nil {
 		return err
@@ -135,7 +135,7 @@ func (m *WritableVLANGroup) validateSlug(formats strfmt.Registry) error {
 }
 
 // MarshalBinary interface implementation
-func (m *WritableVLANGroup) MarshalBinary() ([]byte, error) {
+func (m *WritableTenantGroup) MarshalBinary() ([]byte, error) {
 	if m == nil {
 		return nil, nil
 	}
@@ -143,8 +143,8 @@ func (m *WritableVLANGroup) MarshalBinary() ([]byte, error) {
 }
 
 // UnmarshalBinary interface implementation
-func (m *WritableVLANGroup) UnmarshalBinary(b []byte) error {
-	var res WritableVLANGroup
+func (m *WritableTenantGroup) UnmarshalBinary(b []byte) error {
+	var res WritableTenantGroup
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err
 	}

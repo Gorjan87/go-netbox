@@ -47,7 +47,7 @@ type WritableConfigContext struct {
 	Data *string `json:"data"`
 
 	// Description
-	// Max Length: 100
+	// Max Length: 200
 	Description string `json:"description,omitempty"`
 
 	// ID
@@ -200,7 +200,7 @@ func (m *WritableConfigContext) validateDescription(formats strfmt.Registry) err
 		return nil
 	}
 
-	if err := validate.MaxLength("description", "body", string(m.Description), 100); err != nil {
+	if err := validate.MaxLength("description", "body", string(m.Description), 200); err != nil {
 		return err
 	}
 

@@ -138,7 +138,7 @@ type WritableRack struct {
 	// Width
 	//
 	// Rail-to-rail width
-	// Enum: [19 23]
+	// Enum: [10 19 21 23]
 	Width int64 `json:"width,omitempty"`
 }
 
@@ -522,7 +522,7 @@ var writableRackTypeWidthPropEnum []interface{}
 
 func init() {
 	var res []int64
-	if err := json.Unmarshal([]byte(`[19,23]`), &res); err != nil {
+	if err := json.Unmarshal([]byte(`[10,19,21,23]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {

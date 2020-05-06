@@ -28,39 +28,32 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// NestedIPAddress Primary ip
-// swagger:model NestedIPAddress
-type NestedIPAddress struct {
-
-	// Address
-	//
-	// IPv4 or IPv6 address (with mask)
-	// Required: true
-	Address *string `json:"address"`
+// AvailablePrefix available prefix
+// swagger:model AvailablePrefix
+type AvailablePrefix struct {
 
 	// Family
 	// Read Only: true
-	Family string `json:"family,omitempty"`
+	Family int64 `json:"family,omitempty"`
 
-	// ID
+	// Prefix
 	// Read Only: true
-	ID int64 `json:"id,omitempty"`
+	// Min Length: 1
+	Prefix string `json:"prefix,omitempty"`
 
-	// Url
-	// Read Only: true
-	// Format: uri
-	URL strfmt.URI `json:"url,omitempty"`
+	// vrf
+	Vrf *NestedVRF `json:"vrf,omitempty"`
 }
 
-// Validate validates this nested IP address
-func (m *NestedIPAddress) Validate(formats strfmt.Registry) error {
+// Validate validates this available prefix
+func (m *AvailablePrefix) Validate(formats strfmt.Registry) error {
 	var res []error
 
-	if err := m.validateAddress(formats); err != nil {
+	if err := m.validatePrefix(formats); err != nil {
 		res = append(res, err)
 	}
 
-	if err := m.validateURL(formats); err != nil {
+	if err := m.validateVrf(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -70,30 +63,39 @@ func (m *NestedIPAddress) Validate(formats strfmt.Registry) error {
 	return nil
 }
 
-func (m *NestedIPAddress) validateAddress(formats strfmt.Registry) error {
+func (m *AvailablePrefix) validatePrefix(formats strfmt.Registry) error {
 
-	if err := validate.Required("address", "body", m.Address); err != nil {
+	if swag.IsZero(m.Prefix) { // not required
+		return nil
+	}
+
+	if err := validate.MinLength("prefix", "body", string(m.Prefix), 1); err != nil {
 		return err
 	}
 
 	return nil
 }
 
-func (m *NestedIPAddress) validateURL(formats strfmt.Registry) error {
+func (m *AvailablePrefix) validateVrf(formats strfmt.Registry) error {
 
-	if swag.IsZero(m.URL) { // not required
+	if swag.IsZero(m.Vrf) { // not required
 		return nil
 	}
 
-	if err := validate.FormatOf("url", "body", "uri", m.URL.String(), formats); err != nil {
-		return err
+	if m.Vrf != nil {
+		if err := m.Vrf.Validate(formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("vrf")
+			}
+			return err
+		}
 	}
 
 	return nil
 }
 
 // MarshalBinary interface implementation
-func (m *NestedIPAddress) MarshalBinary() ([]byte, error) {
+func (m *AvailablePrefix) MarshalBinary() ([]byte, error) {
 	if m == nil {
 		return nil, nil
 	}
@@ -101,8 +103,8 @@ func (m *NestedIPAddress) MarshalBinary() ([]byte, error) {
 }
 
 // UnmarshalBinary interface implementation
-func (m *NestedIPAddress) UnmarshalBinary(b []byte) error {
-	var res NestedIPAddress
+func (m *AvailablePrefix) UnmarshalBinary(b []byte) error {
+	var res AvailablePrefix
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err
 	}

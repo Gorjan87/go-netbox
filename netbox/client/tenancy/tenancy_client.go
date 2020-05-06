@@ -42,76 +42,6 @@ type Client struct {
 }
 
 /*
-TenancyChoicesList tenancy choices list API
-*/
-func (a *Client) TenancyChoicesList(params *TenancyChoicesListParams, authInfo runtime.ClientAuthInfoWriter) (*TenancyChoicesListOK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewTenancyChoicesListParams()
-	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
-		ID:                 "tenancy__choices_list",
-		Method:             "GET",
-		PathPattern:        "/tenancy/_choices/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &TenancyChoicesListReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	})
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*TenancyChoicesListOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for tenancy__choices_list: API contract not enforced by server. Client expected to get an error, but got: %T", result)
-	panic(msg)
-}
-
-/*
-TenancyChoicesRead tenancy choices read API
-*/
-func (a *Client) TenancyChoicesRead(params *TenancyChoicesReadParams, authInfo runtime.ClientAuthInfoWriter) (*TenancyChoicesReadOK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewTenancyChoicesReadParams()
-	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
-		ID:                 "tenancy__choices_read",
-		Method:             "GET",
-		PathPattern:        "/tenancy/_choices/{id}/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &TenancyChoicesReadReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	})
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*TenancyChoicesReadOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for tenancy__choices_read: API contract not enforced by server. Client expected to get an error, but got: %T", result)
-	panic(msg)
-}
-
-/*
 TenancyTenantGroupsCreate tenancy tenant groups create API
 */
 func (a *Client) TenancyTenantGroupsCreate(params *TenancyTenantGroupsCreateParams, authInfo runtime.ClientAuthInfoWriter) (*TenancyTenantGroupsCreateCreated, error) {
@@ -126,7 +56,7 @@ func (a *Client) TenancyTenantGroupsCreate(params *TenancyTenantGroupsCreatePara
 		PathPattern:        "/tenancy/tenant-groups/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &TenancyTenantGroupsCreateReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -161,7 +91,7 @@ func (a *Client) TenancyTenantGroupsDelete(params *TenancyTenantGroupsDeletePara
 		PathPattern:        "/tenancy/tenant-groups/{id}/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &TenancyTenantGroupsDeleteReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -196,7 +126,7 @@ func (a *Client) TenancyTenantGroupsList(params *TenancyTenantGroupsListParams, 
 		PathPattern:        "/tenancy/tenant-groups/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &TenancyTenantGroupsListReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -231,7 +161,7 @@ func (a *Client) TenancyTenantGroupsPartialUpdate(params *TenancyTenantGroupsPar
 		PathPattern:        "/tenancy/tenant-groups/{id}/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &TenancyTenantGroupsPartialUpdateReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -266,7 +196,7 @@ func (a *Client) TenancyTenantGroupsRead(params *TenancyTenantGroupsReadParams, 
 		PathPattern:        "/tenancy/tenant-groups/{id}/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &TenancyTenantGroupsReadReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -301,7 +231,7 @@ func (a *Client) TenancyTenantGroupsUpdate(params *TenancyTenantGroupsUpdatePara
 		PathPattern:        "/tenancy/tenant-groups/{id}/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &TenancyTenantGroupsUpdateReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -336,7 +266,7 @@ func (a *Client) TenancyTenantsCreate(params *TenancyTenantsCreateParams, authIn
 		PathPattern:        "/tenancy/tenants/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &TenancyTenantsCreateReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -371,7 +301,7 @@ func (a *Client) TenancyTenantsDelete(params *TenancyTenantsDeleteParams, authIn
 		PathPattern:        "/tenancy/tenants/{id}/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &TenancyTenantsDeleteReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -406,7 +336,7 @@ func (a *Client) TenancyTenantsList(params *TenancyTenantsListParams, authInfo r
 		PathPattern:        "/tenancy/tenants/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &TenancyTenantsListReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -441,7 +371,7 @@ func (a *Client) TenancyTenantsPartialUpdate(params *TenancyTenantsPartialUpdate
 		PathPattern:        "/tenancy/tenants/{id}/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &TenancyTenantsPartialUpdateReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -476,7 +406,7 @@ func (a *Client) TenancyTenantsRead(params *TenancyTenantsReadParams, authInfo r
 		PathPattern:        "/tenancy/tenants/{id}/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &TenancyTenantsReadReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -511,7 +441,7 @@ func (a *Client) TenancyTenantsUpdate(params *TenancyTenantsUpdateParams, authIn
 		PathPattern:        "/tenancy/tenants/{id}/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &TenancyTenantsUpdateReader{formats: a.formats},
 		AuthInfo:           authInfo,

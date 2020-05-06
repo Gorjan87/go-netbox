@@ -36,6 +36,10 @@ type ClusterType struct {
 	// Read Only: true
 	ClusterCount int64 `json:"cluster_count,omitempty"`
 
+	// Description
+	// Max Length: 200
+	Description string `json:"description,omitempty"`
+
 	// ID
 	// Read Only: true
 	ID int64 `json:"id,omitempty"`
@@ -58,6 +62,10 @@ type ClusterType struct {
 func (m *ClusterType) Validate(formats strfmt.Registry) error {
 	var res []error
 
+	if err := m.validateDescription(formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.validateName(formats); err != nil {
 		res = append(res, err)
 	}
@@ -69,6 +77,19 @@ func (m *ClusterType) Validate(formats strfmt.Registry) error {
 	if len(res) > 0 {
 		return errors.CompositeValidationError(res...)
 	}
+	return nil
+}
+
+func (m *ClusterType) validateDescription(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.Description) { // not required
+		return nil
+	}
+
+	if err := validate.MaxLength("description", "body", string(m.Description), 200); err != nil {
+		return err
+	}
+
 	return nil
 }
 

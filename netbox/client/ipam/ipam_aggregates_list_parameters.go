@@ -85,13 +85,18 @@ type IpamAggregatesListParams struct {
 	CreatedLte *string
 	/*DateAdded*/
 	DateAdded *string
+	/*DateAddedGt*/
+	DateAddedGt *string
+	/*DateAddedGte*/
+	DateAddedGte *string
+	/*DateAddedLt*/
+	DateAddedLt *string
+	/*DateAddedLte*/
+	DateAddedLte *string
+	/*DateAddedn*/
+	DateAddedn *string
 	/*Family*/
-	Family *string
-	/*IDIn
-	  Multiple values may be separated by commas.
-
-	*/
-	IDIn *string
+	Family *float64
 	/*LastUpdated*/
 	LastUpdated *string
 	/*LastUpdatedGte*/
@@ -114,10 +119,16 @@ type IpamAggregatesListParams struct {
 	Q *string
 	/*Rir*/
 	Rir *string
+	/*Rirn*/
+	Rirn *string
 	/*RirID*/
 	RirID *string
+	/*RirIDn*/
+	RirIDn *string
 	/*Tag*/
 	Tag *string
+	/*Tagn*/
+	Tagn *string
 
 	timeout    time.Duration
 	Context    context.Context
@@ -201,26 +212,70 @@ func (o *IpamAggregatesListParams) SetDateAdded(dateAdded *string) {
 	o.DateAdded = dateAdded
 }
 
+// WithDateAddedGt adds the dateAddedGt to the ipam aggregates list params
+func (o *IpamAggregatesListParams) WithDateAddedGt(dateAddedGt *string) *IpamAggregatesListParams {
+	o.SetDateAddedGt(dateAddedGt)
+	return o
+}
+
+// SetDateAddedGt adds the dateAddedGt to the ipam aggregates list params
+func (o *IpamAggregatesListParams) SetDateAddedGt(dateAddedGt *string) {
+	o.DateAddedGt = dateAddedGt
+}
+
+// WithDateAddedGte adds the dateAddedGte to the ipam aggregates list params
+func (o *IpamAggregatesListParams) WithDateAddedGte(dateAddedGte *string) *IpamAggregatesListParams {
+	o.SetDateAddedGte(dateAddedGte)
+	return o
+}
+
+// SetDateAddedGte adds the dateAddedGte to the ipam aggregates list params
+func (o *IpamAggregatesListParams) SetDateAddedGte(dateAddedGte *string) {
+	o.DateAddedGte = dateAddedGte
+}
+
+// WithDateAddedLt adds the dateAddedLt to the ipam aggregates list params
+func (o *IpamAggregatesListParams) WithDateAddedLt(dateAddedLt *string) *IpamAggregatesListParams {
+	o.SetDateAddedLt(dateAddedLt)
+	return o
+}
+
+// SetDateAddedLt adds the dateAddedLt to the ipam aggregates list params
+func (o *IpamAggregatesListParams) SetDateAddedLt(dateAddedLt *string) {
+	o.DateAddedLt = dateAddedLt
+}
+
+// WithDateAddedLte adds the dateAddedLte to the ipam aggregates list params
+func (o *IpamAggregatesListParams) WithDateAddedLte(dateAddedLte *string) *IpamAggregatesListParams {
+	o.SetDateAddedLte(dateAddedLte)
+	return o
+}
+
+// SetDateAddedLte adds the dateAddedLte to the ipam aggregates list params
+func (o *IpamAggregatesListParams) SetDateAddedLte(dateAddedLte *string) {
+	o.DateAddedLte = dateAddedLte
+}
+
+// WithDateAddedn adds the dateAddedn to the ipam aggregates list params
+func (o *IpamAggregatesListParams) WithDateAddedn(dateAddedn *string) *IpamAggregatesListParams {
+	o.SetDateAddedn(dateAddedn)
+	return o
+}
+
+// SetDateAddedn adds the dateAddedN to the ipam aggregates list params
+func (o *IpamAggregatesListParams) SetDateAddedn(dateAddedn *string) {
+	o.DateAddedn = dateAddedn
+}
+
 // WithFamily adds the family to the ipam aggregates list params
-func (o *IpamAggregatesListParams) WithFamily(family *string) *IpamAggregatesListParams {
+func (o *IpamAggregatesListParams) WithFamily(family *float64) *IpamAggregatesListParams {
 	o.SetFamily(family)
 	return o
 }
 
 // SetFamily adds the family to the ipam aggregates list params
-func (o *IpamAggregatesListParams) SetFamily(family *string) {
+func (o *IpamAggregatesListParams) SetFamily(family *float64) {
 	o.Family = family
-}
-
-// WithIDIn adds the iDIn to the ipam aggregates list params
-func (o *IpamAggregatesListParams) WithIDIn(iDIn *string) *IpamAggregatesListParams {
-	o.SetIDIn(iDIn)
-	return o
-}
-
-// SetIDIn adds the idIn to the ipam aggregates list params
-func (o *IpamAggregatesListParams) SetIDIn(iDIn *string) {
-	o.IDIn = iDIn
 }
 
 // WithLastUpdated adds the lastUpdated to the ipam aggregates list params
@@ -311,6 +366,17 @@ func (o *IpamAggregatesListParams) SetRir(rir *string) {
 	o.Rir = rir
 }
 
+// WithRirn adds the rirn to the ipam aggregates list params
+func (o *IpamAggregatesListParams) WithRirn(rirn *string) *IpamAggregatesListParams {
+	o.SetRirn(rirn)
+	return o
+}
+
+// SetRirn adds the rirN to the ipam aggregates list params
+func (o *IpamAggregatesListParams) SetRirn(rirn *string) {
+	o.Rirn = rirn
+}
+
 // WithRirID adds the rirID to the ipam aggregates list params
 func (o *IpamAggregatesListParams) WithRirID(rirID *string) *IpamAggregatesListParams {
 	o.SetRirID(rirID)
@@ -322,6 +388,17 @@ func (o *IpamAggregatesListParams) SetRirID(rirID *string) {
 	o.RirID = rirID
 }
 
+// WithRirIDn adds the rirIDn to the ipam aggregates list params
+func (o *IpamAggregatesListParams) WithRirIDn(rirIDn *string) *IpamAggregatesListParams {
+	o.SetRirIDn(rirIDn)
+	return o
+}
+
+// SetRirIDn adds the rirIdN to the ipam aggregates list params
+func (o *IpamAggregatesListParams) SetRirIDn(rirIDn *string) {
+	o.RirIDn = rirIDn
+}
+
 // WithTag adds the tag to the ipam aggregates list params
 func (o *IpamAggregatesListParams) WithTag(tag *string) *IpamAggregatesListParams {
 	o.SetTag(tag)
@@ -331,6 +408,17 @@ func (o *IpamAggregatesListParams) WithTag(tag *string) *IpamAggregatesListParam
 // SetTag adds the tag to the ipam aggregates list params
 func (o *IpamAggregatesListParams) SetTag(tag *string) {
 	o.Tag = tag
+}
+
+// WithTagn adds the tagn to the ipam aggregates list params
+func (o *IpamAggregatesListParams) WithTagn(tagn *string) *IpamAggregatesListParams {
+	o.SetTagn(tagn)
+	return o
+}
+
+// SetTagn adds the tagN to the ipam aggregates list params
+func (o *IpamAggregatesListParams) SetTagn(tagn *string) {
+	o.Tagn = tagn
 }
 
 // WriteToRequest writes these params to a swagger request
@@ -405,32 +493,96 @@ func (o *IpamAggregatesListParams) WriteToRequest(r runtime.ClientRequest, reg s
 
 	}
 
-	if o.Family != nil {
+	if o.DateAddedGt != nil {
 
-		// query param family
-		var qrFamily string
-		if o.Family != nil {
-			qrFamily = *o.Family
+		// query param date_added__gt
+		var qrDateAddedGt string
+		if o.DateAddedGt != nil {
+			qrDateAddedGt = *o.DateAddedGt
 		}
-		qFamily := qrFamily
-		if qFamily != "" {
-			if err := r.SetQueryParam("family", qFamily); err != nil {
+		qDateAddedGt := qrDateAddedGt
+		if qDateAddedGt != "" {
+			if err := r.SetQueryParam("date_added__gt", qDateAddedGt); err != nil {
 				return err
 			}
 		}
 
 	}
 
-	if o.IDIn != nil {
+	if o.DateAddedGte != nil {
 
-		// query param id__in
-		var qrIDIn string
-		if o.IDIn != nil {
-			qrIDIn = *o.IDIn
+		// query param date_added__gte
+		var qrDateAddedGte string
+		if o.DateAddedGte != nil {
+			qrDateAddedGte = *o.DateAddedGte
 		}
-		qIDIn := qrIDIn
-		if qIDIn != "" {
-			if err := r.SetQueryParam("id__in", qIDIn); err != nil {
+		qDateAddedGte := qrDateAddedGte
+		if qDateAddedGte != "" {
+			if err := r.SetQueryParam("date_added__gte", qDateAddedGte); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.DateAddedLt != nil {
+
+		// query param date_added__lt
+		var qrDateAddedLt string
+		if o.DateAddedLt != nil {
+			qrDateAddedLt = *o.DateAddedLt
+		}
+		qDateAddedLt := qrDateAddedLt
+		if qDateAddedLt != "" {
+			if err := r.SetQueryParam("date_added__lt", qDateAddedLt); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.DateAddedLte != nil {
+
+		// query param date_added__lte
+		var qrDateAddedLte string
+		if o.DateAddedLte != nil {
+			qrDateAddedLte = *o.DateAddedLte
+		}
+		qDateAddedLte := qrDateAddedLte
+		if qDateAddedLte != "" {
+			if err := r.SetQueryParam("date_added__lte", qDateAddedLte); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.DateAddedn != nil {
+
+		// query param date_added__n
+		var qrDateAddedn string
+		if o.DateAddedn != nil {
+			qrDateAddedn = *o.DateAddedn
+		}
+		qDateAddedn := qrDateAddedn
+		if qDateAddedn != "" {
+			if err := r.SetQueryParam("date_added__n", qDateAddedn); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.Family != nil {
+
+		// query param family
+		var qrFamily float64
+		if o.Family != nil {
+			qrFamily = *o.Family
+		}
+		qFamily := swag.FormatFloat64(qrFamily)
+		if qFamily != "" {
+			if err := r.SetQueryParam("family", qFamily); err != nil {
 				return err
 			}
 		}
@@ -565,6 +717,22 @@ func (o *IpamAggregatesListParams) WriteToRequest(r runtime.ClientRequest, reg s
 
 	}
 
+	if o.Rirn != nil {
+
+		// query param rir__n
+		var qrRirn string
+		if o.Rirn != nil {
+			qrRirn = *o.Rirn
+		}
+		qRirn := qrRirn
+		if qRirn != "" {
+			if err := r.SetQueryParam("rir__n", qRirn); err != nil {
+				return err
+			}
+		}
+
+	}
+
 	if o.RirID != nil {
 
 		// query param rir_id
@@ -581,6 +749,22 @@ func (o *IpamAggregatesListParams) WriteToRequest(r runtime.ClientRequest, reg s
 
 	}
 
+	if o.RirIDn != nil {
+
+		// query param rir_id__n
+		var qrRirIDn string
+		if o.RirIDn != nil {
+			qrRirIDn = *o.RirIDn
+		}
+		qRirIDn := qrRirIDn
+		if qRirIDn != "" {
+			if err := r.SetQueryParam("rir_id__n", qRirIDn); err != nil {
+				return err
+			}
+		}
+
+	}
+
 	if o.Tag != nil {
 
 		// query param tag
@@ -591,6 +775,22 @@ func (o *IpamAggregatesListParams) WriteToRequest(r runtime.ClientRequest, reg s
 		qTag := qrTag
 		if qTag != "" {
 			if err := r.SetQueryParam("tag", qTag); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.Tagn != nil {
+
+		// query param tag__n
+		var qrTagn string
+		if o.Tagn != nil {
+			qrTagn = *o.Tagn
+		}
+		qTagn := qrTagn
+		if qTagn != "" {
+			if err := r.SetQueryParam("tag__n", qTagn); err != nil {
 				return err
 			}
 		}

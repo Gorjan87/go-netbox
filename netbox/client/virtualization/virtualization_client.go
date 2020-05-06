@@ -42,76 +42,6 @@ type Client struct {
 }
 
 /*
-VirtualizationChoicesList virtualization choices list API
-*/
-func (a *Client) VirtualizationChoicesList(params *VirtualizationChoicesListParams, authInfo runtime.ClientAuthInfoWriter) (*VirtualizationChoicesListOK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewVirtualizationChoicesListParams()
-	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
-		ID:                 "virtualization__choices_list",
-		Method:             "GET",
-		PathPattern:        "/virtualization/_choices/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &VirtualizationChoicesListReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	})
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*VirtualizationChoicesListOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for virtualization__choices_list: API contract not enforced by server. Client expected to get an error, but got: %T", result)
-	panic(msg)
-}
-
-/*
-VirtualizationChoicesRead virtualization choices read API
-*/
-func (a *Client) VirtualizationChoicesRead(params *VirtualizationChoicesReadParams, authInfo runtime.ClientAuthInfoWriter) (*VirtualizationChoicesReadOK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewVirtualizationChoicesReadParams()
-	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
-		ID:                 "virtualization__choices_read",
-		Method:             "GET",
-		PathPattern:        "/virtualization/_choices/{id}/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &VirtualizationChoicesReadReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	})
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*VirtualizationChoicesReadOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for virtualization__choices_read: API contract not enforced by server. Client expected to get an error, but got: %T", result)
-	panic(msg)
-}
-
-/*
 VirtualizationClusterGroupsCreate virtualization cluster groups create API
 */
 func (a *Client) VirtualizationClusterGroupsCreate(params *VirtualizationClusterGroupsCreateParams, authInfo runtime.ClientAuthInfoWriter) (*VirtualizationClusterGroupsCreateCreated, error) {
@@ -126,7 +56,7 @@ func (a *Client) VirtualizationClusterGroupsCreate(params *VirtualizationCluster
 		PathPattern:        "/virtualization/cluster-groups/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &VirtualizationClusterGroupsCreateReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -161,7 +91,7 @@ func (a *Client) VirtualizationClusterGroupsDelete(params *VirtualizationCluster
 		PathPattern:        "/virtualization/cluster-groups/{id}/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &VirtualizationClusterGroupsDeleteReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -196,7 +126,7 @@ func (a *Client) VirtualizationClusterGroupsList(params *VirtualizationClusterGr
 		PathPattern:        "/virtualization/cluster-groups/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &VirtualizationClusterGroupsListReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -231,7 +161,7 @@ func (a *Client) VirtualizationClusterGroupsPartialUpdate(params *Virtualization
 		PathPattern:        "/virtualization/cluster-groups/{id}/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &VirtualizationClusterGroupsPartialUpdateReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -266,7 +196,7 @@ func (a *Client) VirtualizationClusterGroupsRead(params *VirtualizationClusterGr
 		PathPattern:        "/virtualization/cluster-groups/{id}/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &VirtualizationClusterGroupsReadReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -301,7 +231,7 @@ func (a *Client) VirtualizationClusterGroupsUpdate(params *VirtualizationCluster
 		PathPattern:        "/virtualization/cluster-groups/{id}/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &VirtualizationClusterGroupsUpdateReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -336,7 +266,7 @@ func (a *Client) VirtualizationClusterTypesCreate(params *VirtualizationClusterT
 		PathPattern:        "/virtualization/cluster-types/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &VirtualizationClusterTypesCreateReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -371,7 +301,7 @@ func (a *Client) VirtualizationClusterTypesDelete(params *VirtualizationClusterT
 		PathPattern:        "/virtualization/cluster-types/{id}/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &VirtualizationClusterTypesDeleteReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -406,7 +336,7 @@ func (a *Client) VirtualizationClusterTypesList(params *VirtualizationClusterTyp
 		PathPattern:        "/virtualization/cluster-types/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &VirtualizationClusterTypesListReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -441,7 +371,7 @@ func (a *Client) VirtualizationClusterTypesPartialUpdate(params *VirtualizationC
 		PathPattern:        "/virtualization/cluster-types/{id}/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &VirtualizationClusterTypesPartialUpdateReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -476,7 +406,7 @@ func (a *Client) VirtualizationClusterTypesRead(params *VirtualizationClusterTyp
 		PathPattern:        "/virtualization/cluster-types/{id}/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &VirtualizationClusterTypesReadReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -511,7 +441,7 @@ func (a *Client) VirtualizationClusterTypesUpdate(params *VirtualizationClusterT
 		PathPattern:        "/virtualization/cluster-types/{id}/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &VirtualizationClusterTypesUpdateReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -546,7 +476,7 @@ func (a *Client) VirtualizationClustersCreate(params *VirtualizationClustersCrea
 		PathPattern:        "/virtualization/clusters/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &VirtualizationClustersCreateReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -581,7 +511,7 @@ func (a *Client) VirtualizationClustersDelete(params *VirtualizationClustersDele
 		PathPattern:        "/virtualization/clusters/{id}/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &VirtualizationClustersDeleteReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -616,7 +546,7 @@ func (a *Client) VirtualizationClustersList(params *VirtualizationClustersListPa
 		PathPattern:        "/virtualization/clusters/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &VirtualizationClustersListReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -651,7 +581,7 @@ func (a *Client) VirtualizationClustersPartialUpdate(params *VirtualizationClust
 		PathPattern:        "/virtualization/clusters/{id}/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &VirtualizationClustersPartialUpdateReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -686,7 +616,7 @@ func (a *Client) VirtualizationClustersRead(params *VirtualizationClustersReadPa
 		PathPattern:        "/virtualization/clusters/{id}/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &VirtualizationClustersReadReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -721,7 +651,7 @@ func (a *Client) VirtualizationClustersUpdate(params *VirtualizationClustersUpda
 		PathPattern:        "/virtualization/clusters/{id}/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &VirtualizationClustersUpdateReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -756,7 +686,7 @@ func (a *Client) VirtualizationInterfacesCreate(params *VirtualizationInterfaces
 		PathPattern:        "/virtualization/interfaces/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &VirtualizationInterfacesCreateReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -791,7 +721,7 @@ func (a *Client) VirtualizationInterfacesDelete(params *VirtualizationInterfaces
 		PathPattern:        "/virtualization/interfaces/{id}/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &VirtualizationInterfacesDeleteReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -826,7 +756,7 @@ func (a *Client) VirtualizationInterfacesList(params *VirtualizationInterfacesLi
 		PathPattern:        "/virtualization/interfaces/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &VirtualizationInterfacesListReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -861,7 +791,7 @@ func (a *Client) VirtualizationInterfacesPartialUpdate(params *VirtualizationInt
 		PathPattern:        "/virtualization/interfaces/{id}/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &VirtualizationInterfacesPartialUpdateReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -896,7 +826,7 @@ func (a *Client) VirtualizationInterfacesRead(params *VirtualizationInterfacesRe
 		PathPattern:        "/virtualization/interfaces/{id}/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &VirtualizationInterfacesReadReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -931,7 +861,7 @@ func (a *Client) VirtualizationInterfacesUpdate(params *VirtualizationInterfaces
 		PathPattern:        "/virtualization/interfaces/{id}/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &VirtualizationInterfacesUpdateReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -966,7 +896,7 @@ func (a *Client) VirtualizationVirtualMachinesCreate(params *VirtualizationVirtu
 		PathPattern:        "/virtualization/virtual-machines/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &VirtualizationVirtualMachinesCreateReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -1001,7 +931,7 @@ func (a *Client) VirtualizationVirtualMachinesDelete(params *VirtualizationVirtu
 		PathPattern:        "/virtualization/virtual-machines/{id}/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &VirtualizationVirtualMachinesDeleteReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -1036,7 +966,7 @@ func (a *Client) VirtualizationVirtualMachinesList(params *VirtualizationVirtual
 		PathPattern:        "/virtualization/virtual-machines/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &VirtualizationVirtualMachinesListReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -1071,7 +1001,7 @@ func (a *Client) VirtualizationVirtualMachinesPartialUpdate(params *Virtualizati
 		PathPattern:        "/virtualization/virtual-machines/{id}/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &VirtualizationVirtualMachinesPartialUpdateReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -1106,7 +1036,7 @@ func (a *Client) VirtualizationVirtualMachinesRead(params *VirtualizationVirtual
 		PathPattern:        "/virtualization/virtual-machines/{id}/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &VirtualizationVirtualMachinesReadReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -1141,7 +1071,7 @@ func (a *Client) VirtualizationVirtualMachinesUpdate(params *VirtualizationVirtu
 		PathPattern:        "/virtualization/virtual-machines/{id}/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &VirtualizationVirtualMachinesUpdateReader{formats: a.formats},
 		AuthInfo:           authInfo,

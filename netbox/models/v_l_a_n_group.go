@@ -32,6 +32,10 @@ import (
 // swagger:model VLANGroup
 type VLANGroup struct {
 
+	// Description
+	// Max Length: 200
+	Description string `json:"description,omitempty"`
+
 	// ID
 	// Read Only: true
 	ID int64 `json:"id,omitempty"`
@@ -61,6 +65,10 @@ type VLANGroup struct {
 func (m *VLANGroup) Validate(formats strfmt.Registry) error {
 	var res []error
 
+	if err := m.validateDescription(formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.validateName(formats); err != nil {
 		res = append(res, err)
 	}
@@ -76,6 +84,19 @@ func (m *VLANGroup) Validate(formats strfmt.Registry) error {
 	if len(res) > 0 {
 		return errors.CompositeValidationError(res...)
 	}
+	return nil
+}
+
+func (m *VLANGroup) validateDescription(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.Description) { // not required
+		return nil
+	}
+
+	if err := validate.MaxLength("description", "body", string(m.Description), 200); err != nil {
+		return err
+	}
+
 	return nil
 }
 

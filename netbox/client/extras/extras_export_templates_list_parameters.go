@@ -79,6 +79,8 @@ type ExtrasExportTemplatesListParams struct {
 
 	/*ContentType*/
 	ContentType *string
+	/*ContentTypen*/
+	ContentTypen *string
 	/*Limit
 	  Number of results to return per page.
 
@@ -86,6 +88,24 @@ type ExtrasExportTemplatesListParams struct {
 	Limit *int64
 	/*Name*/
 	Name *string
+	/*NameIc*/
+	NameIc *string
+	/*NameIe*/
+	NameIe *string
+	/*NameIew*/
+	NameIew *string
+	/*NameIsw*/
+	NameIsw *string
+	/*Namen*/
+	Namen *string
+	/*NameNic*/
+	NameNic *string
+	/*NameNie*/
+	NameNie *string
+	/*NameNiew*/
+	NameNiew *string
+	/*NameNisw*/
+	NameNisw *string
 	/*Offset
 	  The initial index from which to return the results.
 
@@ -93,6 +113,8 @@ type ExtrasExportTemplatesListParams struct {
 	Offset *int64
 	/*TemplateLanguage*/
 	TemplateLanguage *string
+	/*TemplateLanguagen*/
+	TemplateLanguagen *string
 
 	timeout    time.Duration
 	Context    context.Context
@@ -143,6 +165,17 @@ func (o *ExtrasExportTemplatesListParams) SetContentType(contentType *string) {
 	o.ContentType = contentType
 }
 
+// WithContentTypen adds the contentTypen to the extras export templates list params
+func (o *ExtrasExportTemplatesListParams) WithContentTypen(contentTypen *string) *ExtrasExportTemplatesListParams {
+	o.SetContentTypen(contentTypen)
+	return o
+}
+
+// SetContentTypen adds the contentTypeN to the extras export templates list params
+func (o *ExtrasExportTemplatesListParams) SetContentTypen(contentTypen *string) {
+	o.ContentTypen = contentTypen
+}
+
 // WithLimit adds the limit to the extras export templates list params
 func (o *ExtrasExportTemplatesListParams) WithLimit(limit *int64) *ExtrasExportTemplatesListParams {
 	o.SetLimit(limit)
@@ -163,6 +196,105 @@ func (o *ExtrasExportTemplatesListParams) WithName(name *string) *ExtrasExportTe
 // SetName adds the name to the extras export templates list params
 func (o *ExtrasExportTemplatesListParams) SetName(name *string) {
 	o.Name = name
+}
+
+// WithNameIc adds the nameIc to the extras export templates list params
+func (o *ExtrasExportTemplatesListParams) WithNameIc(nameIc *string) *ExtrasExportTemplatesListParams {
+	o.SetNameIc(nameIc)
+	return o
+}
+
+// SetNameIc adds the nameIc to the extras export templates list params
+func (o *ExtrasExportTemplatesListParams) SetNameIc(nameIc *string) {
+	o.NameIc = nameIc
+}
+
+// WithNameIe adds the nameIe to the extras export templates list params
+func (o *ExtrasExportTemplatesListParams) WithNameIe(nameIe *string) *ExtrasExportTemplatesListParams {
+	o.SetNameIe(nameIe)
+	return o
+}
+
+// SetNameIe adds the nameIe to the extras export templates list params
+func (o *ExtrasExportTemplatesListParams) SetNameIe(nameIe *string) {
+	o.NameIe = nameIe
+}
+
+// WithNameIew adds the nameIew to the extras export templates list params
+func (o *ExtrasExportTemplatesListParams) WithNameIew(nameIew *string) *ExtrasExportTemplatesListParams {
+	o.SetNameIew(nameIew)
+	return o
+}
+
+// SetNameIew adds the nameIew to the extras export templates list params
+func (o *ExtrasExportTemplatesListParams) SetNameIew(nameIew *string) {
+	o.NameIew = nameIew
+}
+
+// WithNameIsw adds the nameIsw to the extras export templates list params
+func (o *ExtrasExportTemplatesListParams) WithNameIsw(nameIsw *string) *ExtrasExportTemplatesListParams {
+	o.SetNameIsw(nameIsw)
+	return o
+}
+
+// SetNameIsw adds the nameIsw to the extras export templates list params
+func (o *ExtrasExportTemplatesListParams) SetNameIsw(nameIsw *string) {
+	o.NameIsw = nameIsw
+}
+
+// WithNamen adds the namen to the extras export templates list params
+func (o *ExtrasExportTemplatesListParams) WithNamen(namen *string) *ExtrasExportTemplatesListParams {
+	o.SetNamen(namen)
+	return o
+}
+
+// SetNamen adds the nameN to the extras export templates list params
+func (o *ExtrasExportTemplatesListParams) SetNamen(namen *string) {
+	o.Namen = namen
+}
+
+// WithNameNic adds the nameNic to the extras export templates list params
+func (o *ExtrasExportTemplatesListParams) WithNameNic(nameNic *string) *ExtrasExportTemplatesListParams {
+	o.SetNameNic(nameNic)
+	return o
+}
+
+// SetNameNic adds the nameNic to the extras export templates list params
+func (o *ExtrasExportTemplatesListParams) SetNameNic(nameNic *string) {
+	o.NameNic = nameNic
+}
+
+// WithNameNie adds the nameNie to the extras export templates list params
+func (o *ExtrasExportTemplatesListParams) WithNameNie(nameNie *string) *ExtrasExportTemplatesListParams {
+	o.SetNameNie(nameNie)
+	return o
+}
+
+// SetNameNie adds the nameNie to the extras export templates list params
+func (o *ExtrasExportTemplatesListParams) SetNameNie(nameNie *string) {
+	o.NameNie = nameNie
+}
+
+// WithNameNiew adds the nameNiew to the extras export templates list params
+func (o *ExtrasExportTemplatesListParams) WithNameNiew(nameNiew *string) *ExtrasExportTemplatesListParams {
+	o.SetNameNiew(nameNiew)
+	return o
+}
+
+// SetNameNiew adds the nameNiew to the extras export templates list params
+func (o *ExtrasExportTemplatesListParams) SetNameNiew(nameNiew *string) {
+	o.NameNiew = nameNiew
+}
+
+// WithNameNisw adds the nameNisw to the extras export templates list params
+func (o *ExtrasExportTemplatesListParams) WithNameNisw(nameNisw *string) *ExtrasExportTemplatesListParams {
+	o.SetNameNisw(nameNisw)
+	return o
+}
+
+// SetNameNisw adds the nameNisw to the extras export templates list params
+func (o *ExtrasExportTemplatesListParams) SetNameNisw(nameNisw *string) {
+	o.NameNisw = nameNisw
 }
 
 // WithOffset adds the offset to the extras export templates list params
@@ -187,6 +319,17 @@ func (o *ExtrasExportTemplatesListParams) SetTemplateLanguage(templateLanguage *
 	o.TemplateLanguage = templateLanguage
 }
 
+// WithTemplateLanguagen adds the templateLanguagen to the extras export templates list params
+func (o *ExtrasExportTemplatesListParams) WithTemplateLanguagen(templateLanguagen *string) *ExtrasExportTemplatesListParams {
+	o.SetTemplateLanguagen(templateLanguagen)
+	return o
+}
+
+// SetTemplateLanguagen adds the templateLanguageN to the extras export templates list params
+func (o *ExtrasExportTemplatesListParams) SetTemplateLanguagen(templateLanguagen *string) {
+	o.TemplateLanguagen = templateLanguagen
+}
+
 // WriteToRequest writes these params to a swagger request
 func (o *ExtrasExportTemplatesListParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
 
@@ -205,6 +348,22 @@ func (o *ExtrasExportTemplatesListParams) WriteToRequest(r runtime.ClientRequest
 		qContentType := qrContentType
 		if qContentType != "" {
 			if err := r.SetQueryParam("content_type", qContentType); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.ContentTypen != nil {
+
+		// query param content_type__n
+		var qrContentTypen string
+		if o.ContentTypen != nil {
+			qrContentTypen = *o.ContentTypen
+		}
+		qContentTypen := qrContentTypen
+		if qContentTypen != "" {
+			if err := r.SetQueryParam("content_type__n", qContentTypen); err != nil {
 				return err
 			}
 		}
@@ -243,6 +402,150 @@ func (o *ExtrasExportTemplatesListParams) WriteToRequest(r runtime.ClientRequest
 
 	}
 
+	if o.NameIc != nil {
+
+		// query param name__ic
+		var qrNameIc string
+		if o.NameIc != nil {
+			qrNameIc = *o.NameIc
+		}
+		qNameIc := qrNameIc
+		if qNameIc != "" {
+			if err := r.SetQueryParam("name__ic", qNameIc); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.NameIe != nil {
+
+		// query param name__ie
+		var qrNameIe string
+		if o.NameIe != nil {
+			qrNameIe = *o.NameIe
+		}
+		qNameIe := qrNameIe
+		if qNameIe != "" {
+			if err := r.SetQueryParam("name__ie", qNameIe); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.NameIew != nil {
+
+		// query param name__iew
+		var qrNameIew string
+		if o.NameIew != nil {
+			qrNameIew = *o.NameIew
+		}
+		qNameIew := qrNameIew
+		if qNameIew != "" {
+			if err := r.SetQueryParam("name__iew", qNameIew); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.NameIsw != nil {
+
+		// query param name__isw
+		var qrNameIsw string
+		if o.NameIsw != nil {
+			qrNameIsw = *o.NameIsw
+		}
+		qNameIsw := qrNameIsw
+		if qNameIsw != "" {
+			if err := r.SetQueryParam("name__isw", qNameIsw); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.Namen != nil {
+
+		// query param name__n
+		var qrNamen string
+		if o.Namen != nil {
+			qrNamen = *o.Namen
+		}
+		qNamen := qrNamen
+		if qNamen != "" {
+			if err := r.SetQueryParam("name__n", qNamen); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.NameNic != nil {
+
+		// query param name__nic
+		var qrNameNic string
+		if o.NameNic != nil {
+			qrNameNic = *o.NameNic
+		}
+		qNameNic := qrNameNic
+		if qNameNic != "" {
+			if err := r.SetQueryParam("name__nic", qNameNic); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.NameNie != nil {
+
+		// query param name__nie
+		var qrNameNie string
+		if o.NameNie != nil {
+			qrNameNie = *o.NameNie
+		}
+		qNameNie := qrNameNie
+		if qNameNie != "" {
+			if err := r.SetQueryParam("name__nie", qNameNie); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.NameNiew != nil {
+
+		// query param name__niew
+		var qrNameNiew string
+		if o.NameNiew != nil {
+			qrNameNiew = *o.NameNiew
+		}
+		qNameNiew := qrNameNiew
+		if qNameNiew != "" {
+			if err := r.SetQueryParam("name__niew", qNameNiew); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.NameNisw != nil {
+
+		// query param name__nisw
+		var qrNameNisw string
+		if o.NameNisw != nil {
+			qrNameNisw = *o.NameNisw
+		}
+		qNameNisw := qrNameNisw
+		if qNameNisw != "" {
+			if err := r.SetQueryParam("name__nisw", qNameNisw); err != nil {
+				return err
+			}
+		}
+
+	}
+
 	if o.Offset != nil {
 
 		// query param offset
@@ -269,6 +572,22 @@ func (o *ExtrasExportTemplatesListParams) WriteToRequest(r runtime.ClientRequest
 		qTemplateLanguage := qrTemplateLanguage
 		if qTemplateLanguage != "" {
 			if err := r.SetQueryParam("template_language", qTemplateLanguage); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.TemplateLanguagen != nil {
+
+		// query param template_language__n
+		var qrTemplateLanguagen string
+		if o.TemplateLanguagen != nil {
+			qrTemplateLanguagen = *o.TemplateLanguagen
+		}
+		qTemplateLanguagen := qrTemplateLanguagen
+		if qTemplateLanguagen != "" {
+			if err := r.SetQueryParam("template_language__n", qTemplateLanguagen); err != nil {
 				return err
 			}
 		}

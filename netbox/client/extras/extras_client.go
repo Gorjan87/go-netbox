@@ -42,76 +42,6 @@ type Client struct {
 }
 
 /*
-ExtrasChoicesList extras choices list API
-*/
-func (a *Client) ExtrasChoicesList(params *ExtrasChoicesListParams, authInfo runtime.ClientAuthInfoWriter) (*ExtrasChoicesListOK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewExtrasChoicesListParams()
-	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
-		ID:                 "extras__choices_list",
-		Method:             "GET",
-		PathPattern:        "/extras/_choices/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &ExtrasChoicesListReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	})
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*ExtrasChoicesListOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for extras__choices_list: API contract not enforced by server. Client expected to get an error, but got: %T", result)
-	panic(msg)
-}
-
-/*
-ExtrasChoicesRead extras choices read API
-*/
-func (a *Client) ExtrasChoicesRead(params *ExtrasChoicesReadParams, authInfo runtime.ClientAuthInfoWriter) (*ExtrasChoicesReadOK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewExtrasChoicesReadParams()
-	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
-		ID:                 "extras__choices_read",
-		Method:             "GET",
-		PathPattern:        "/extras/_choices/{id}/",
-		ProducesMediaTypes: []string{"application/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
-		Params:             params,
-		Reader:             &ExtrasChoicesReadReader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	})
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*ExtrasChoicesReadOK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for extras__choices_read: API contract not enforced by server. Client expected to get an error, but got: %T", result)
-	panic(msg)
-}
-
-/*
 ExtrasCustomFieldChoicesList extras custom field choices list API
 */
 func (a *Client) ExtrasCustomFieldChoicesList(params *ExtrasCustomFieldChoicesListParams, authInfo runtime.ClientAuthInfoWriter) (*ExtrasCustomFieldChoicesListOK, error) {
@@ -126,7 +56,7 @@ func (a *Client) ExtrasCustomFieldChoicesList(params *ExtrasCustomFieldChoicesLi
 		PathPattern:        "/extras/_custom_field_choices/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &ExtrasCustomFieldChoicesListReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -161,7 +91,7 @@ func (a *Client) ExtrasCustomFieldChoicesRead(params *ExtrasCustomFieldChoicesRe
 		PathPattern:        "/extras/_custom_field_choices/{id}/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &ExtrasCustomFieldChoicesReadReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -196,7 +126,7 @@ func (a *Client) ExtrasConfigContextsCreate(params *ExtrasConfigContextsCreatePa
 		PathPattern:        "/extras/config-contexts/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &ExtrasConfigContextsCreateReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -231,7 +161,7 @@ func (a *Client) ExtrasConfigContextsDelete(params *ExtrasConfigContextsDeletePa
 		PathPattern:        "/extras/config-contexts/{id}/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &ExtrasConfigContextsDeleteReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -266,7 +196,7 @@ func (a *Client) ExtrasConfigContextsList(params *ExtrasConfigContextsListParams
 		PathPattern:        "/extras/config-contexts/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &ExtrasConfigContextsListReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -301,7 +231,7 @@ func (a *Client) ExtrasConfigContextsPartialUpdate(params *ExtrasConfigContextsP
 		PathPattern:        "/extras/config-contexts/{id}/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &ExtrasConfigContextsPartialUpdateReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -336,7 +266,7 @@ func (a *Client) ExtrasConfigContextsRead(params *ExtrasConfigContextsReadParams
 		PathPattern:        "/extras/config-contexts/{id}/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &ExtrasConfigContextsReadReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -371,7 +301,7 @@ func (a *Client) ExtrasConfigContextsUpdate(params *ExtrasConfigContextsUpdatePa
 		PathPattern:        "/extras/config-contexts/{id}/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &ExtrasConfigContextsUpdateReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -406,7 +336,7 @@ func (a *Client) ExtrasExportTemplatesCreate(params *ExtrasExportTemplatesCreate
 		PathPattern:        "/extras/export-templates/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &ExtrasExportTemplatesCreateReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -441,7 +371,7 @@ func (a *Client) ExtrasExportTemplatesDelete(params *ExtrasExportTemplatesDelete
 		PathPattern:        "/extras/export-templates/{id}/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &ExtrasExportTemplatesDeleteReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -476,7 +406,7 @@ func (a *Client) ExtrasExportTemplatesList(params *ExtrasExportTemplatesListPara
 		PathPattern:        "/extras/export-templates/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &ExtrasExportTemplatesListReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -511,7 +441,7 @@ func (a *Client) ExtrasExportTemplatesPartialUpdate(params *ExtrasExportTemplate
 		PathPattern:        "/extras/export-templates/{id}/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &ExtrasExportTemplatesPartialUpdateReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -546,7 +476,7 @@ func (a *Client) ExtrasExportTemplatesRead(params *ExtrasExportTemplatesReadPara
 		PathPattern:        "/extras/export-templates/{id}/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &ExtrasExportTemplatesReadReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -581,7 +511,7 @@ func (a *Client) ExtrasExportTemplatesUpdate(params *ExtrasExportTemplatesUpdate
 		PathPattern:        "/extras/export-templates/{id}/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &ExtrasExportTemplatesUpdateReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -616,7 +546,7 @@ func (a *Client) ExtrasGraphsCreate(params *ExtrasGraphsCreateParams, authInfo r
 		PathPattern:        "/extras/graphs/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &ExtrasGraphsCreateReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -651,7 +581,7 @@ func (a *Client) ExtrasGraphsDelete(params *ExtrasGraphsDeleteParams, authInfo r
 		PathPattern:        "/extras/graphs/{id}/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &ExtrasGraphsDeleteReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -686,7 +616,7 @@ func (a *Client) ExtrasGraphsList(params *ExtrasGraphsListParams, authInfo runti
 		PathPattern:        "/extras/graphs/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &ExtrasGraphsListReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -721,7 +651,7 @@ func (a *Client) ExtrasGraphsPartialUpdate(params *ExtrasGraphsPartialUpdatePara
 		PathPattern:        "/extras/graphs/{id}/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &ExtrasGraphsPartialUpdateReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -756,7 +686,7 @@ func (a *Client) ExtrasGraphsRead(params *ExtrasGraphsReadParams, authInfo runti
 		PathPattern:        "/extras/graphs/{id}/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &ExtrasGraphsReadReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -791,7 +721,7 @@ func (a *Client) ExtrasGraphsUpdate(params *ExtrasGraphsUpdateParams, authInfo r
 		PathPattern:        "/extras/graphs/{id}/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &ExtrasGraphsUpdateReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -826,7 +756,7 @@ func (a *Client) ExtrasImageAttachmentsCreate(params *ExtrasImageAttachmentsCrea
 		PathPattern:        "/extras/image-attachments/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &ExtrasImageAttachmentsCreateReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -861,7 +791,7 @@ func (a *Client) ExtrasImageAttachmentsDelete(params *ExtrasImageAttachmentsDele
 		PathPattern:        "/extras/image-attachments/{id}/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &ExtrasImageAttachmentsDeleteReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -896,7 +826,7 @@ func (a *Client) ExtrasImageAttachmentsList(params *ExtrasImageAttachmentsListPa
 		PathPattern:        "/extras/image-attachments/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &ExtrasImageAttachmentsListReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -931,7 +861,7 @@ func (a *Client) ExtrasImageAttachmentsPartialUpdate(params *ExtrasImageAttachme
 		PathPattern:        "/extras/image-attachments/{id}/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &ExtrasImageAttachmentsPartialUpdateReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -966,7 +896,7 @@ func (a *Client) ExtrasImageAttachmentsRead(params *ExtrasImageAttachmentsReadPa
 		PathPattern:        "/extras/image-attachments/{id}/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &ExtrasImageAttachmentsReadReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -1001,7 +931,7 @@ func (a *Client) ExtrasImageAttachmentsUpdate(params *ExtrasImageAttachmentsUpda
 		PathPattern:        "/extras/image-attachments/{id}/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &ExtrasImageAttachmentsUpdateReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -1036,7 +966,7 @@ func (a *Client) ExtrasObjectChangesList(params *ExtrasObjectChangesListParams, 
 		PathPattern:        "/extras/object-changes/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &ExtrasObjectChangesListReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -1071,7 +1001,7 @@ func (a *Client) ExtrasObjectChangesRead(params *ExtrasObjectChangesReadParams, 
 		PathPattern:        "/extras/object-changes/{id}/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &ExtrasObjectChangesReadReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -1106,7 +1036,7 @@ func (a *Client) ExtrasReportsList(params *ExtrasReportsListParams, authInfo run
 		PathPattern:        "/extras/reports/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &ExtrasReportsListReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -1141,7 +1071,7 @@ func (a *Client) ExtrasReportsRead(params *ExtrasReportsReadParams, authInfo run
 		PathPattern:        "/extras/reports/{id}/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &ExtrasReportsReadReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -1176,7 +1106,7 @@ func (a *Client) ExtrasReportsRun(params *ExtrasReportsRunParams, authInfo runti
 		PathPattern:        "/extras/reports/{id}/run/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &ExtrasReportsRunReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -1211,7 +1141,7 @@ func (a *Client) ExtrasScriptsList(params *ExtrasScriptsListParams, authInfo run
 		PathPattern:        "/extras/scripts/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &ExtrasScriptsListReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -1246,7 +1176,7 @@ func (a *Client) ExtrasScriptsRead(params *ExtrasScriptsReadParams, authInfo run
 		PathPattern:        "/extras/scripts/{id}/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &ExtrasScriptsReadReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -1281,7 +1211,7 @@ func (a *Client) ExtrasTagsCreate(params *ExtrasTagsCreateParams, authInfo runti
 		PathPattern:        "/extras/tags/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &ExtrasTagsCreateReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -1316,7 +1246,7 @@ func (a *Client) ExtrasTagsDelete(params *ExtrasTagsDeleteParams, authInfo runti
 		PathPattern:        "/extras/tags/{id}/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &ExtrasTagsDeleteReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -1351,7 +1281,7 @@ func (a *Client) ExtrasTagsList(params *ExtrasTagsListParams, authInfo runtime.C
 		PathPattern:        "/extras/tags/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &ExtrasTagsListReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -1386,7 +1316,7 @@ func (a *Client) ExtrasTagsPartialUpdate(params *ExtrasTagsPartialUpdateParams, 
 		PathPattern:        "/extras/tags/{id}/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &ExtrasTagsPartialUpdateReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -1421,7 +1351,7 @@ func (a *Client) ExtrasTagsRead(params *ExtrasTagsReadParams, authInfo runtime.C
 		PathPattern:        "/extras/tags/{id}/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &ExtrasTagsReadReader{formats: a.formats},
 		AuthInfo:           authInfo,
@@ -1456,7 +1386,7 @@ func (a *Client) ExtrasTagsUpdate(params *ExtrasTagsUpdateParams, authInfo runti
 		PathPattern:        "/extras/tags/{id}/",
 		ProducesMediaTypes: []string{"application/json"},
 		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"http"},
+		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &ExtrasTagsUpdateReader{formats: a.formats},
 		AuthInfo:           authInfo,
