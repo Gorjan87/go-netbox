@@ -60,7 +60,7 @@ type Cable struct {
 
 	// Termination a
 	// Read Only: true
-	Terminationa map[string]string `json:"termination_a,omitempty"`
+	Terminationa *NestedInterface `json:"termination_a,omitempty"`
 
 	// Termination a id
 	// Required: true
@@ -74,7 +74,7 @@ type Cable struct {
 
 	// Termination b
 	// Read Only: true
-	Terminationb map[string]string `json:"termination_b,omitempty"`
+	Terminationb *NestedInterface `json:"termination_b,omitempty"`
 
 	// Termination b id
 	// Required: true
@@ -115,11 +115,19 @@ func (m *Cable) Validate(formats strfmt.Registry) error {
 		res = append(res, err)
 	}
 
+	if err := m.validateTerminationa(formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.validateTerminationaID(formats); err != nil {
 		res = append(res, err)
 	}
 
 	if err := m.validateTerminationaType(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateTerminationb(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -224,6 +232,24 @@ func (m *Cable) validateStatus(formats strfmt.Registry) error {
 	return nil
 }
 
+func (m *Cable) validateTerminationa(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.Terminationa) { // not required
+		return nil
+	}
+
+	if m.Terminationa != nil {
+		if err := m.Terminationa.Validate(formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("termination_a")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
 func (m *Cable) validateTerminationaID(formats strfmt.Registry) error {
 
 	if err := validate.Required("termination_a_id", "body", m.TerminationaID); err != nil {
@@ -245,6 +271,24 @@ func (m *Cable) validateTerminationaType(formats strfmt.Registry) error {
 
 	if err := validate.Required("termination_a_type", "body", m.TerminationaType); err != nil {
 		return err
+	}
+
+	return nil
+}
+
+func (m *Cable) validateTerminationb(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.Terminationb) { // not required
+		return nil
+	}
+
+	if m.Terminationb != nil {
+		if err := m.Terminationb.Validate(formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("termination_b")
+			}
+			return err
+		}
 	}
 
 	return nil

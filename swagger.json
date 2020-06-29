@@ -30677,12 +30677,9 @@
           "minimum": 0
         },
         "termination_a": {
-          "title": "Termination a",
-          "type": "object",
-          "additionalProperties": {
-            "type": "string"
-          },
-          "readOnly": true
+			"title": "Termination a",
+			"$ref": "#/definitions/NestedInterface",
+			"readOnly": true
         },
         "termination_b_type": {
           "title": "Termination b type",
@@ -30695,12 +30692,9 @@
           "minimum": 0
         },
         "termination_b": {
-          "title": "Termination b",
-          "type": "object",
-          "additionalProperties": {
-            "type": "string"
-          },
-          "readOnly": true
+			"title": "Termination b",
+			"$ref": "#/definitions/NestedInterface",
+			"readOnly": true
         },
         "type": {
           "title": "Type",
