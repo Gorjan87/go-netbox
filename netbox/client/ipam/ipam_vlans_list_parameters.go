@@ -91,6 +91,18 @@ type IpamVlansListParams struct {
 	GroupID *string
 	/*GroupIDn*/
 	GroupIDn *string
+	/*ID*/
+	ID *string
+	/*IDGt*/
+	IDGt *string
+	/*IDGte*/
+	IDGte *string
+	/*IDLt*/
+	IDLt *string
+	/*IDLte*/
+	IDLte *string
+	/*IDn*/
+	IDn *string
 	/*LastUpdated*/
 	LastUpdated *string
 	/*LastUpdatedGte*/
@@ -303,6 +315,72 @@ func (o *IpamVlansListParams) WithGroupIDn(groupIDn *string) *IpamVlansListParam
 // SetGroupIDn adds the groupIdN to the ipam vlans list params
 func (o *IpamVlansListParams) SetGroupIDn(groupIDn *string) {
 	o.GroupIDn = groupIDn
+}
+
+// WithID adds the id to the ipam vlans list params
+func (o *IpamVlansListParams) WithID(id *string) *IpamVlansListParams {
+	o.SetID(id)
+	return o
+}
+
+// SetID adds the id to the ipam vlans list params
+func (o *IpamVlansListParams) SetID(id *string) {
+	o.ID = id
+}
+
+// WithIDGt adds the iDGt to the ipam vlans list params
+func (o *IpamVlansListParams) WithIDGt(iDGt *string) *IpamVlansListParams {
+	o.SetIDGt(iDGt)
+	return o
+}
+
+// SetIDGt adds the idGt to the ipam vlans list params
+func (o *IpamVlansListParams) SetIDGt(iDGt *string) {
+	o.IDGt = iDGt
+}
+
+// WithIDGte adds the iDGte to the ipam vlans list params
+func (o *IpamVlansListParams) WithIDGte(iDGte *string) *IpamVlansListParams {
+	o.SetIDGte(iDGte)
+	return o
+}
+
+// SetIDGte adds the idGte to the ipam vlans list params
+func (o *IpamVlansListParams) SetIDGte(iDGte *string) {
+	o.IDGte = iDGte
+}
+
+// WithIDLt adds the iDLt to the ipam vlans list params
+func (o *IpamVlansListParams) WithIDLt(iDLt *string) *IpamVlansListParams {
+	o.SetIDLt(iDLt)
+	return o
+}
+
+// SetIDLt adds the idLt to the ipam vlans list params
+func (o *IpamVlansListParams) SetIDLt(iDLt *string) {
+	o.IDLt = iDLt
+}
+
+// WithIDLte adds the iDLte to the ipam vlans list params
+func (o *IpamVlansListParams) WithIDLte(iDLte *string) *IpamVlansListParams {
+	o.SetIDLte(iDLte)
+	return o
+}
+
+// SetIDLte adds the idLte to the ipam vlans list params
+func (o *IpamVlansListParams) SetIDLte(iDLte *string) {
+	o.IDLte = iDLte
+}
+
+// WithIDn adds the iDn to the ipam vlans list params
+func (o *IpamVlansListParams) WithIDn(iDn *string) *IpamVlansListParams {
+	o.SetIDn(iDn)
+	return o
+}
+
+// SetIDn adds the idN to the ipam vlans list params
+func (o *IpamVlansListParams) SetIDn(iDn *string) {
+	o.IDn = iDn
 }
 
 // WithLastUpdated adds the lastUpdated to the ipam vlans list params
@@ -925,6 +1003,102 @@ func (o *IpamVlansListParams) WriteToRequest(r runtime.ClientRequest, reg strfmt
 		qGroupIDn := qrGroupIDn
 		if qGroupIDn != "" {
 			if err := r.SetQueryParam("group_id__n", qGroupIDn); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.ID != nil {
+
+		// query param id
+		var qrID string
+		if o.ID != nil {
+			qrID = *o.ID
+		}
+		qID := qrID
+		if qID != "" {
+			if err := r.SetQueryParam("id", qID); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.IDGt != nil {
+
+		// query param id__gt
+		var qrIDGt string
+		if o.IDGt != nil {
+			qrIDGt = *o.IDGt
+		}
+		qIDGt := qrIDGt
+		if qIDGt != "" {
+			if err := r.SetQueryParam("id__gt", qIDGt); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.IDGte != nil {
+
+		// query param id__gte
+		var qrIDGte string
+		if o.IDGte != nil {
+			qrIDGte = *o.IDGte
+		}
+		qIDGte := qrIDGte
+		if qIDGte != "" {
+			if err := r.SetQueryParam("id__gte", qIDGte); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.IDLt != nil {
+
+		// query param id__lt
+		var qrIDLt string
+		if o.IDLt != nil {
+			qrIDLt = *o.IDLt
+		}
+		qIDLt := qrIDLt
+		if qIDLt != "" {
+			if err := r.SetQueryParam("id__lt", qIDLt); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.IDLte != nil {
+
+		// query param id__lte
+		var qrIDLte string
+		if o.IDLte != nil {
+			qrIDLte = *o.IDLte
+		}
+		qIDLte := qrIDLte
+		if qIDLte != "" {
+			if err := r.SetQueryParam("id__lte", qIDLte); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.IDn != nil {
+
+		// query param id__n
+		var qrIDn string
+		if o.IDn != nil {
+			qrIDn = *o.IDn
+		}
+		qIDn := qrIDn
+		if qIDn != "" {
+			if err := r.SetQueryParam("id__n", qIDn); err != nil {
 				return err
 			}
 		}

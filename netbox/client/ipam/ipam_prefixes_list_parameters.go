@@ -87,6 +87,18 @@ type IpamPrefixesListParams struct {
 	CreatedLte *string
 	/*Family*/
 	Family *float64
+	/*ID*/
+	ID *string
+	/*IDGt*/
+	IDGt *string
+	/*IDGte*/
+	IDGte *string
+	/*IDLt*/
+	IDLt *string
+	/*IDLte*/
+	IDLte *string
+	/*IDn*/
+	IDn *string
 	/*IsPool*/
 	IsPool *string
 	/*LastUpdated*/
@@ -269,6 +281,72 @@ func (o *IpamPrefixesListParams) WithFamily(family *float64) *IpamPrefixesListPa
 // SetFamily adds the family to the ipam prefixes list params
 func (o *IpamPrefixesListParams) SetFamily(family *float64) {
 	o.Family = family
+}
+
+// WithID adds the id to the ipam prefixes list params
+func (o *IpamPrefixesListParams) WithID(id *string) *IpamPrefixesListParams {
+	o.SetID(id)
+	return o
+}
+
+// SetID adds the id to the ipam prefixes list params
+func (o *IpamPrefixesListParams) SetID(id *string) {
+	o.ID = id
+}
+
+// WithIDGt adds the iDGt to the ipam prefixes list params
+func (o *IpamPrefixesListParams) WithIDGt(iDGt *string) *IpamPrefixesListParams {
+	o.SetIDGt(iDGt)
+	return o
+}
+
+// SetIDGt adds the idGt to the ipam prefixes list params
+func (o *IpamPrefixesListParams) SetIDGt(iDGt *string) {
+	o.IDGt = iDGt
+}
+
+// WithIDGte adds the iDGte to the ipam prefixes list params
+func (o *IpamPrefixesListParams) WithIDGte(iDGte *string) *IpamPrefixesListParams {
+	o.SetIDGte(iDGte)
+	return o
+}
+
+// SetIDGte adds the idGte to the ipam prefixes list params
+func (o *IpamPrefixesListParams) SetIDGte(iDGte *string) {
+	o.IDGte = iDGte
+}
+
+// WithIDLt adds the iDLt to the ipam prefixes list params
+func (o *IpamPrefixesListParams) WithIDLt(iDLt *string) *IpamPrefixesListParams {
+	o.SetIDLt(iDLt)
+	return o
+}
+
+// SetIDLt adds the idLt to the ipam prefixes list params
+func (o *IpamPrefixesListParams) SetIDLt(iDLt *string) {
+	o.IDLt = iDLt
+}
+
+// WithIDLte adds the iDLte to the ipam prefixes list params
+func (o *IpamPrefixesListParams) WithIDLte(iDLte *string) *IpamPrefixesListParams {
+	o.SetIDLte(iDLte)
+	return o
+}
+
+// SetIDLte adds the idLte to the ipam prefixes list params
+func (o *IpamPrefixesListParams) SetIDLte(iDLte *string) {
+	o.IDLte = iDLte
+}
+
+// WithIDn adds the iDn to the ipam prefixes list params
+func (o *IpamPrefixesListParams) WithIDn(iDn *string) *IpamPrefixesListParams {
+	o.SetIDn(iDn)
+	return o
+}
+
+// SetIDn adds the idN to the ipam prefixes list params
+func (o *IpamPrefixesListParams) SetIDn(iDn *string) {
+	o.IDn = iDn
 }
 
 // WithIsPool adds the isPool to the ipam prefixes list params
@@ -815,6 +893,102 @@ func (o *IpamPrefixesListParams) WriteToRequest(r runtime.ClientRequest, reg str
 		qFamily := swag.FormatFloat64(qrFamily)
 		if qFamily != "" {
 			if err := r.SetQueryParam("family", qFamily); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.ID != nil {
+
+		// query param id
+		var qrID string
+		if o.ID != nil {
+			qrID = *o.ID
+		}
+		qID := qrID
+		if qID != "" {
+			if err := r.SetQueryParam("id", qID); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.IDGt != nil {
+
+		// query param id__gt
+		var qrIDGt string
+		if o.IDGt != nil {
+			qrIDGt = *o.IDGt
+		}
+		qIDGt := qrIDGt
+		if qIDGt != "" {
+			if err := r.SetQueryParam("id__gt", qIDGt); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.IDGte != nil {
+
+		// query param id__gte
+		var qrIDGte string
+		if o.IDGte != nil {
+			qrIDGte = *o.IDGte
+		}
+		qIDGte := qrIDGte
+		if qIDGte != "" {
+			if err := r.SetQueryParam("id__gte", qIDGte); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.IDLt != nil {
+
+		// query param id__lt
+		var qrIDLt string
+		if o.IDLt != nil {
+			qrIDLt = *o.IDLt
+		}
+		qIDLt := qrIDLt
+		if qIDLt != "" {
+			if err := r.SetQueryParam("id__lt", qIDLt); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.IDLte != nil {
+
+		// query param id__lte
+		var qrIDLte string
+		if o.IDLte != nil {
+			qrIDLte = *o.IDLte
+		}
+		qIDLte := qrIDLte
+		if qIDLte != "" {
+			if err := r.SetQueryParam("id__lte", qIDLte); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.IDn != nil {
+
+		// query param id__n
+		var qrIDn string
+		if o.IDn != nil {
+			qrIDn = *o.IDn
+		}
+		qIDn := qrIDn
+		if qIDn != "" {
+			if err := r.SetQueryParam("id__n", qIDn); err != nil {
 				return err
 			}
 		}

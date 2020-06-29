@@ -42,6 +42,8 @@ type Provider struct {
 	AdminContact string `json:"admin_contact,omitempty"`
 
 	// ASN
+	//
+	// 32-bit autonomous system number
 	// Maximum: 4.294967295e+09
 	// Minimum: 1
 	Asn *int64 `json:"asn,omitempty"`
@@ -79,7 +81,7 @@ type Provider struct {
 	// NOC contact
 	NocContact string `json:"noc_contact,omitempty"`
 
-	// Portal
+	// Portal URL
 	// Max Length: 200
 	// Format: uri
 	PortalURL strfmt.URI `json:"portal_url,omitempty"`

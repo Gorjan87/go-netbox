@@ -66,10 +66,14 @@ type WritableRack struct {
 	DisplayName string `json:"display_name,omitempty"`
 
 	// Facility ID
+	//
+	// Locally-assigned identifier
 	// Max Length: 50
 	FacilityID *string `json:"facility_id,omitempty"`
 
 	// Group
+	//
+	// Assigned group
 	Group *int64 `json:"group,omitempty"`
 
 	// ID
@@ -88,6 +92,8 @@ type WritableRack struct {
 	Name *string `json:"name"`
 
 	// Outer depth
+	//
+	// Outer dimension of rack (depth)
 	// Maximum: 32767
 	// Minimum: 0
 	OuterDepth *int64 `json:"outer_depth,omitempty"`
@@ -97,6 +103,8 @@ type WritableRack struct {
 	OuterUnit string `json:"outer_unit,omitempty"`
 
 	// Outer width
+	//
+	// Outer dimension of rack (width)
 	// Maximum: 32767
 	// Minimum: 0
 	OuterWidth *int64 `json:"outer_width,omitempty"`
@@ -106,6 +114,8 @@ type WritableRack struct {
 	PowerfeedCount int64 `json:"powerfeed_count,omitempty"`
 
 	// Role
+	//
+	// Functional role
 	Role *int64 `json:"role,omitempty"`
 
 	// Serial number
@@ -131,6 +141,8 @@ type WritableRack struct {
 	Type string `json:"type,omitempty"`
 
 	// Height (U)
+	//
+	// Height in rack units
 	// Maximum: 100
 	// Minimum: 1
 	UHeight int64 `json:"u_height,omitempty"`

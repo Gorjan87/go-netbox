@@ -36,6 +36,8 @@ import (
 type WritableSite struct {
 
 	// ASN
+	//
+	// 32-bit autonomous system number
 	// Maximum: 4.294967295e+09
 	// Minimum: 1
 	Asn *int64 `json:"asn,omitempty"`
@@ -77,6 +79,8 @@ type WritableSite struct {
 	DeviceCount int64 `json:"device_count,omitempty"`
 
 	// Facility
+	//
+	// Local facility ID or description
 	// Max Length: 50
 	Facility string `json:"facility,omitempty"`
 
@@ -90,9 +94,13 @@ type WritableSite struct {
 	LastUpdated strfmt.DateTime `json:"last_updated,omitempty"`
 
 	// Latitude
+	//
+	// GPS coordinate (latitude)
 	Latitude *string `json:"latitude,omitempty"`
 
 	// Longitude
+	//
+	// GPS coordinate (longitude)
 	Longitude *string `json:"longitude,omitempty"`
 
 	// Name

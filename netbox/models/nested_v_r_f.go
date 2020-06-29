@@ -47,6 +47,8 @@ type NestedVRF struct {
 	PrefixCount int64 `json:"prefix_count,omitempty"`
 
 	// Route distinguisher
+	//
+	// Unique route distinguisher (as defined in RFC 4364)
 	// Max Length: 21
 	Rd *string `json:"rd,omitempty"`
 
