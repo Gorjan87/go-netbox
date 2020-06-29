@@ -38,13 +38,8 @@ type DeviceInterface struct {
 	// cable
 	Cable *NestedCable `json:"cable,omitempty"`
 
-	// Connected endpoint
-	//
-	//
-	// Return the appropriate serializer for the type of connected object.
-	//
-	// Read Only: true
-	ConnectedEndpoint map[string]string `json:"connected_endpoint,omitempty"`
+	// connected endpoint
+	ConnectedEndpoint *NestedInterface `json:"connected_endpoint,omitempty"`
 
 	// Connected endpoint type
 	// Read Only: true
@@ -120,6 +115,10 @@ func (m *DeviceInterface) Validate(formats strfmt.Registry) error {
 		res = append(res, err)
 	}
 
+	if err := m.validateConnectedEndpoint(formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.validateConnectionStatus(formats); err != nil {
 		res = append(res, err)
 	}
@@ -180,6 +179,24 @@ func (m *DeviceInterface) validateCable(formats strfmt.Registry) error {
 		if err := m.Cable.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
 				return ve.ValidateName("cable")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
+func (m *DeviceInterface) validateConnectedEndpoint(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.ConnectedEndpoint) { // not required
+		return nil
+	}
+
+	if m.ConnectedEndpoint != nil {
+		if err := m.ConnectedEndpoint.Validate(formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("connected_endpoint")
 			}
 			return err
 		}
