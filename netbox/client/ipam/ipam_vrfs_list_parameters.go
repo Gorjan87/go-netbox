@@ -85,6 +85,18 @@ type IpamVrfsListParams struct {
 	CreatedLte *string
 	/*EnforceUnique*/
 	EnforceUnique *string
+	/*ID*/
+	ID *string
+	/*IDGt*/
+	IDGt *string
+	/*IDGte*/
+	IDGte *string
+	/*IDLt*/
+	IDLt *string
+	/*IDLte*/
+	IDLte *string
+	/*IDn*/
+	IDn *string
 	/*LastUpdated*/
 	LastUpdated *string
 	/*LastUpdatedGte*/
@@ -244,6 +256,72 @@ func (o *IpamVrfsListParams) WithEnforceUnique(enforceUnique *string) *IpamVrfsL
 // SetEnforceUnique adds the enforceUnique to the ipam vrfs list params
 func (o *IpamVrfsListParams) SetEnforceUnique(enforceUnique *string) {
 	o.EnforceUnique = enforceUnique
+}
+
+// WithID adds the id to the ipam vrfs list params
+func (o *IpamVrfsListParams) WithID(id *string) *IpamVrfsListParams {
+	o.SetID(id)
+	return o
+}
+
+// SetID adds the id to the ipam vrfs list params
+func (o *IpamVrfsListParams) SetID(id *string) {
+	o.ID = id
+}
+
+// WithIDGt adds the iDGt to the ipam vrfs list params
+func (o *IpamVrfsListParams) WithIDGt(iDGt *string) *IpamVrfsListParams {
+	o.SetIDGt(iDGt)
+	return o
+}
+
+// SetIDGt adds the idGt to the ipam vrfs list params
+func (o *IpamVrfsListParams) SetIDGt(iDGt *string) {
+	o.IDGt = iDGt
+}
+
+// WithIDGte adds the iDGte to the ipam vrfs list params
+func (o *IpamVrfsListParams) WithIDGte(iDGte *string) *IpamVrfsListParams {
+	o.SetIDGte(iDGte)
+	return o
+}
+
+// SetIDGte adds the idGte to the ipam vrfs list params
+func (o *IpamVrfsListParams) SetIDGte(iDGte *string) {
+	o.IDGte = iDGte
+}
+
+// WithIDLt adds the iDLt to the ipam vrfs list params
+func (o *IpamVrfsListParams) WithIDLt(iDLt *string) *IpamVrfsListParams {
+	o.SetIDLt(iDLt)
+	return o
+}
+
+// SetIDLt adds the idLt to the ipam vrfs list params
+func (o *IpamVrfsListParams) SetIDLt(iDLt *string) {
+	o.IDLt = iDLt
+}
+
+// WithIDLte adds the iDLte to the ipam vrfs list params
+func (o *IpamVrfsListParams) WithIDLte(iDLte *string) *IpamVrfsListParams {
+	o.SetIDLte(iDLte)
+	return o
+}
+
+// SetIDLte adds the idLte to the ipam vrfs list params
+func (o *IpamVrfsListParams) SetIDLte(iDLte *string) {
+	o.IDLte = iDLte
+}
+
+// WithIDn adds the iDn to the ipam vrfs list params
+func (o *IpamVrfsListParams) WithIDn(iDn *string) *IpamVrfsListParams {
+	o.SetIDn(iDn)
+	return o
+}
+
+// SetIDn adds the idN to the ipam vrfs list params
+func (o *IpamVrfsListParams) SetIDn(iDn *string) {
+	o.IDn = iDn
 }
 
 // WithLastUpdated adds the lastUpdated to the ipam vrfs list params
@@ -708,6 +786,102 @@ func (o *IpamVrfsListParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.
 		qEnforceUnique := qrEnforceUnique
 		if qEnforceUnique != "" {
 			if err := r.SetQueryParam("enforce_unique", qEnforceUnique); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.ID != nil {
+
+		// query param id
+		var qrID string
+		if o.ID != nil {
+			qrID = *o.ID
+		}
+		qID := qrID
+		if qID != "" {
+			if err := r.SetQueryParam("id", qID); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.IDGt != nil {
+
+		// query param id__gt
+		var qrIDGt string
+		if o.IDGt != nil {
+			qrIDGt = *o.IDGt
+		}
+		qIDGt := qrIDGt
+		if qIDGt != "" {
+			if err := r.SetQueryParam("id__gt", qIDGt); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.IDGte != nil {
+
+		// query param id__gte
+		var qrIDGte string
+		if o.IDGte != nil {
+			qrIDGte = *o.IDGte
+		}
+		qIDGte := qrIDGte
+		if qIDGte != "" {
+			if err := r.SetQueryParam("id__gte", qIDGte); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.IDLt != nil {
+
+		// query param id__lt
+		var qrIDLt string
+		if o.IDLt != nil {
+			qrIDLt = *o.IDLt
+		}
+		qIDLt := qrIDLt
+		if qIDLt != "" {
+			if err := r.SetQueryParam("id__lt", qIDLt); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.IDLte != nil {
+
+		// query param id__lte
+		var qrIDLte string
+		if o.IDLte != nil {
+			qrIDLte = *o.IDLte
+		}
+		qIDLte := qrIDLte
+		if qIDLte != "" {
+			if err := r.SetQueryParam("id__lte", qIDLte); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.IDn != nil {
+
+		// query param id__n
+		var qrIDn string
+		if o.IDn != nil {
+			qrIDn = *o.IDn
+		}
+		qIDn := qrIDn
+		if qIDn != "" {
+			if err := r.SetQueryParam("id__n", qIDn); err != nil {
 				return err
 			}
 		}

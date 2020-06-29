@@ -77,6 +77,38 @@ for the extras tags list operation typically these are written to a http.Request
 */
 type ExtrasTagsListParams struct {
 
+	/*Color*/
+	Color *string
+	/*ColorIc*/
+	ColorIc *string
+	/*ColorIe*/
+	ColorIe *string
+	/*ColorIew*/
+	ColorIew *string
+	/*ColorIsw*/
+	ColorIsw *string
+	/*Colorn*/
+	Colorn *string
+	/*ColorNic*/
+	ColorNic *string
+	/*ColorNie*/
+	ColorNie *string
+	/*ColorNiew*/
+	ColorNiew *string
+	/*ColorNisw*/
+	ColorNisw *string
+	/*ID*/
+	ID *string
+	/*IDGt*/
+	IDGt *string
+	/*IDGte*/
+	IDGte *string
+	/*IDLt*/
+	IDLt *string
+	/*IDLte*/
+	IDLte *string
+	/*IDn*/
+	IDn *string
 	/*Limit
 	  Number of results to return per page.
 
@@ -166,6 +198,182 @@ func (o *ExtrasTagsListParams) WithHTTPClient(client *http.Client) *ExtrasTagsLi
 // SetHTTPClient adds the HTTPClient to the extras tags list params
 func (o *ExtrasTagsListParams) SetHTTPClient(client *http.Client) {
 	o.HTTPClient = client
+}
+
+// WithColor adds the color to the extras tags list params
+func (o *ExtrasTagsListParams) WithColor(color *string) *ExtrasTagsListParams {
+	o.SetColor(color)
+	return o
+}
+
+// SetColor adds the color to the extras tags list params
+func (o *ExtrasTagsListParams) SetColor(color *string) {
+	o.Color = color
+}
+
+// WithColorIc adds the colorIc to the extras tags list params
+func (o *ExtrasTagsListParams) WithColorIc(colorIc *string) *ExtrasTagsListParams {
+	o.SetColorIc(colorIc)
+	return o
+}
+
+// SetColorIc adds the colorIc to the extras tags list params
+func (o *ExtrasTagsListParams) SetColorIc(colorIc *string) {
+	o.ColorIc = colorIc
+}
+
+// WithColorIe adds the colorIe to the extras tags list params
+func (o *ExtrasTagsListParams) WithColorIe(colorIe *string) *ExtrasTagsListParams {
+	o.SetColorIe(colorIe)
+	return o
+}
+
+// SetColorIe adds the colorIe to the extras tags list params
+func (o *ExtrasTagsListParams) SetColorIe(colorIe *string) {
+	o.ColorIe = colorIe
+}
+
+// WithColorIew adds the colorIew to the extras tags list params
+func (o *ExtrasTagsListParams) WithColorIew(colorIew *string) *ExtrasTagsListParams {
+	o.SetColorIew(colorIew)
+	return o
+}
+
+// SetColorIew adds the colorIew to the extras tags list params
+func (o *ExtrasTagsListParams) SetColorIew(colorIew *string) {
+	o.ColorIew = colorIew
+}
+
+// WithColorIsw adds the colorIsw to the extras tags list params
+func (o *ExtrasTagsListParams) WithColorIsw(colorIsw *string) *ExtrasTagsListParams {
+	o.SetColorIsw(colorIsw)
+	return o
+}
+
+// SetColorIsw adds the colorIsw to the extras tags list params
+func (o *ExtrasTagsListParams) SetColorIsw(colorIsw *string) {
+	o.ColorIsw = colorIsw
+}
+
+// WithColorn adds the colorn to the extras tags list params
+func (o *ExtrasTagsListParams) WithColorn(colorn *string) *ExtrasTagsListParams {
+	o.SetColorn(colorn)
+	return o
+}
+
+// SetColorn adds the colorN to the extras tags list params
+func (o *ExtrasTagsListParams) SetColorn(colorn *string) {
+	o.Colorn = colorn
+}
+
+// WithColorNic adds the colorNic to the extras tags list params
+func (o *ExtrasTagsListParams) WithColorNic(colorNic *string) *ExtrasTagsListParams {
+	o.SetColorNic(colorNic)
+	return o
+}
+
+// SetColorNic adds the colorNic to the extras tags list params
+func (o *ExtrasTagsListParams) SetColorNic(colorNic *string) {
+	o.ColorNic = colorNic
+}
+
+// WithColorNie adds the colorNie to the extras tags list params
+func (o *ExtrasTagsListParams) WithColorNie(colorNie *string) *ExtrasTagsListParams {
+	o.SetColorNie(colorNie)
+	return o
+}
+
+// SetColorNie adds the colorNie to the extras tags list params
+func (o *ExtrasTagsListParams) SetColorNie(colorNie *string) {
+	o.ColorNie = colorNie
+}
+
+// WithColorNiew adds the colorNiew to the extras tags list params
+func (o *ExtrasTagsListParams) WithColorNiew(colorNiew *string) *ExtrasTagsListParams {
+	o.SetColorNiew(colorNiew)
+	return o
+}
+
+// SetColorNiew adds the colorNiew to the extras tags list params
+func (o *ExtrasTagsListParams) SetColorNiew(colorNiew *string) {
+	o.ColorNiew = colorNiew
+}
+
+// WithColorNisw adds the colorNisw to the extras tags list params
+func (o *ExtrasTagsListParams) WithColorNisw(colorNisw *string) *ExtrasTagsListParams {
+	o.SetColorNisw(colorNisw)
+	return o
+}
+
+// SetColorNisw adds the colorNisw to the extras tags list params
+func (o *ExtrasTagsListParams) SetColorNisw(colorNisw *string) {
+	o.ColorNisw = colorNisw
+}
+
+// WithID adds the id to the extras tags list params
+func (o *ExtrasTagsListParams) WithID(id *string) *ExtrasTagsListParams {
+	o.SetID(id)
+	return o
+}
+
+// SetID adds the id to the extras tags list params
+func (o *ExtrasTagsListParams) SetID(id *string) {
+	o.ID = id
+}
+
+// WithIDGt adds the iDGt to the extras tags list params
+func (o *ExtrasTagsListParams) WithIDGt(iDGt *string) *ExtrasTagsListParams {
+	o.SetIDGt(iDGt)
+	return o
+}
+
+// SetIDGt adds the idGt to the extras tags list params
+func (o *ExtrasTagsListParams) SetIDGt(iDGt *string) {
+	o.IDGt = iDGt
+}
+
+// WithIDGte adds the iDGte to the extras tags list params
+func (o *ExtrasTagsListParams) WithIDGte(iDGte *string) *ExtrasTagsListParams {
+	o.SetIDGte(iDGte)
+	return o
+}
+
+// SetIDGte adds the idGte to the extras tags list params
+func (o *ExtrasTagsListParams) SetIDGte(iDGte *string) {
+	o.IDGte = iDGte
+}
+
+// WithIDLt adds the iDLt to the extras tags list params
+func (o *ExtrasTagsListParams) WithIDLt(iDLt *string) *ExtrasTagsListParams {
+	o.SetIDLt(iDLt)
+	return o
+}
+
+// SetIDLt adds the idLt to the extras tags list params
+func (o *ExtrasTagsListParams) SetIDLt(iDLt *string) {
+	o.IDLt = iDLt
+}
+
+// WithIDLte adds the iDLte to the extras tags list params
+func (o *ExtrasTagsListParams) WithIDLte(iDLte *string) *ExtrasTagsListParams {
+	o.SetIDLte(iDLte)
+	return o
+}
+
+// SetIDLte adds the idLte to the extras tags list params
+func (o *ExtrasTagsListParams) SetIDLte(iDLte *string) {
+	o.IDLte = iDLte
+}
+
+// WithIDn adds the iDn to the extras tags list params
+func (o *ExtrasTagsListParams) WithIDn(iDn *string) *ExtrasTagsListParams {
+	o.SetIDn(iDn)
+	return o
+}
+
+// SetIDn adds the idN to the extras tags list params
+func (o *ExtrasTagsListParams) SetIDn(iDn *string) {
+	o.IDn = iDn
 }
 
 // WithLimit adds the limit to the extras tags list params
@@ -428,6 +636,262 @@ func (o *ExtrasTagsListParams) WriteToRequest(r runtime.ClientRequest, reg strfm
 		return err
 	}
 	var res []error
+
+	if o.Color != nil {
+
+		// query param color
+		var qrColor string
+		if o.Color != nil {
+			qrColor = *o.Color
+		}
+		qColor := qrColor
+		if qColor != "" {
+			if err := r.SetQueryParam("color", qColor); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.ColorIc != nil {
+
+		// query param color__ic
+		var qrColorIc string
+		if o.ColorIc != nil {
+			qrColorIc = *o.ColorIc
+		}
+		qColorIc := qrColorIc
+		if qColorIc != "" {
+			if err := r.SetQueryParam("color__ic", qColorIc); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.ColorIe != nil {
+
+		// query param color__ie
+		var qrColorIe string
+		if o.ColorIe != nil {
+			qrColorIe = *o.ColorIe
+		}
+		qColorIe := qrColorIe
+		if qColorIe != "" {
+			if err := r.SetQueryParam("color__ie", qColorIe); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.ColorIew != nil {
+
+		// query param color__iew
+		var qrColorIew string
+		if o.ColorIew != nil {
+			qrColorIew = *o.ColorIew
+		}
+		qColorIew := qrColorIew
+		if qColorIew != "" {
+			if err := r.SetQueryParam("color__iew", qColorIew); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.ColorIsw != nil {
+
+		// query param color__isw
+		var qrColorIsw string
+		if o.ColorIsw != nil {
+			qrColorIsw = *o.ColorIsw
+		}
+		qColorIsw := qrColorIsw
+		if qColorIsw != "" {
+			if err := r.SetQueryParam("color__isw", qColorIsw); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.Colorn != nil {
+
+		// query param color__n
+		var qrColorn string
+		if o.Colorn != nil {
+			qrColorn = *o.Colorn
+		}
+		qColorn := qrColorn
+		if qColorn != "" {
+			if err := r.SetQueryParam("color__n", qColorn); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.ColorNic != nil {
+
+		// query param color__nic
+		var qrColorNic string
+		if o.ColorNic != nil {
+			qrColorNic = *o.ColorNic
+		}
+		qColorNic := qrColorNic
+		if qColorNic != "" {
+			if err := r.SetQueryParam("color__nic", qColorNic); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.ColorNie != nil {
+
+		// query param color__nie
+		var qrColorNie string
+		if o.ColorNie != nil {
+			qrColorNie = *o.ColorNie
+		}
+		qColorNie := qrColorNie
+		if qColorNie != "" {
+			if err := r.SetQueryParam("color__nie", qColorNie); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.ColorNiew != nil {
+
+		// query param color__niew
+		var qrColorNiew string
+		if o.ColorNiew != nil {
+			qrColorNiew = *o.ColorNiew
+		}
+		qColorNiew := qrColorNiew
+		if qColorNiew != "" {
+			if err := r.SetQueryParam("color__niew", qColorNiew); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.ColorNisw != nil {
+
+		// query param color__nisw
+		var qrColorNisw string
+		if o.ColorNisw != nil {
+			qrColorNisw = *o.ColorNisw
+		}
+		qColorNisw := qrColorNisw
+		if qColorNisw != "" {
+			if err := r.SetQueryParam("color__nisw", qColorNisw); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.ID != nil {
+
+		// query param id
+		var qrID string
+		if o.ID != nil {
+			qrID = *o.ID
+		}
+		qID := qrID
+		if qID != "" {
+			if err := r.SetQueryParam("id", qID); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.IDGt != nil {
+
+		// query param id__gt
+		var qrIDGt string
+		if o.IDGt != nil {
+			qrIDGt = *o.IDGt
+		}
+		qIDGt := qrIDGt
+		if qIDGt != "" {
+			if err := r.SetQueryParam("id__gt", qIDGt); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.IDGte != nil {
+
+		// query param id__gte
+		var qrIDGte string
+		if o.IDGte != nil {
+			qrIDGte = *o.IDGte
+		}
+		qIDGte := qrIDGte
+		if qIDGte != "" {
+			if err := r.SetQueryParam("id__gte", qIDGte); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.IDLt != nil {
+
+		// query param id__lt
+		var qrIDLt string
+		if o.IDLt != nil {
+			qrIDLt = *o.IDLt
+		}
+		qIDLt := qrIDLt
+		if qIDLt != "" {
+			if err := r.SetQueryParam("id__lt", qIDLt); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.IDLte != nil {
+
+		// query param id__lte
+		var qrIDLte string
+		if o.IDLte != nil {
+			qrIDLte = *o.IDLte
+		}
+		qIDLte := qrIDLte
+		if qIDLte != "" {
+			if err := r.SetQueryParam("id__lte", qIDLte); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.IDn != nil {
+
+		// query param id__n
+		var qrIDn string
+		if o.IDn != nil {
+			qrIDn = *o.IDn
+		}
+		qIDn := qrIDn
+		if qIDn != "" {
+			if err := r.SetQueryParam("id__n", qIDn); err != nil {
+				return err
+			}
+		}
+
+	}
 
 	if o.Limit != nil {
 

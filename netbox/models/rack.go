@@ -66,6 +66,8 @@ type Rack struct {
 	DisplayName string `json:"display_name,omitempty"`
 
 	// Facility ID
+	//
+	// Locally-assigned identifier
 	// Max Length: 50
 	FacilityID *string `json:"facility_id,omitempty"`
 
@@ -88,6 +90,8 @@ type Rack struct {
 	Name *string `json:"name"`
 
 	// Outer depth
+	//
+	// Outer dimension of rack (depth)
 	// Maximum: 32767
 	// Minimum: 0
 	OuterDepth *int64 `json:"outer_depth,omitempty"`
@@ -96,6 +100,8 @@ type Rack struct {
 	OuterUnit *RackOuterUnit `json:"outer_unit,omitempty"`
 
 	// Outer width
+	//
+	// Outer dimension of rack (width)
 	// Maximum: 32767
 	// Minimum: 0
 	OuterWidth *int64 `json:"outer_width,omitempty"`
@@ -128,6 +134,8 @@ type Rack struct {
 	Type *RackType `json:"type,omitempty"`
 
 	// Height (U)
+	//
+	// Height in rack units
 	// Maximum: 100
 	// Minimum: 1
 	UHeight int64 `json:"u_height,omitempty"`

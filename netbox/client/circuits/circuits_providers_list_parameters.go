@@ -115,6 +115,18 @@ type CircuitsProvidersListParams struct {
 	CreatedGte *string
 	/*CreatedLte*/
 	CreatedLte *string
+	/*ID*/
+	ID *string
+	/*IDGt*/
+	IDGt *string
+	/*IDGte*/
+	IDGte *string
+	/*IDLt*/
+	IDLt *string
+	/*IDLte*/
+	IDLte *string
+	/*IDn*/
+	IDn *string
 	/*LastUpdated*/
 	LastUpdated *string
 	/*LastUpdatedGte*/
@@ -439,6 +451,72 @@ func (o *CircuitsProvidersListParams) WithCreatedLte(createdLte *string) *Circui
 // SetCreatedLte adds the createdLte to the circuits providers list params
 func (o *CircuitsProvidersListParams) SetCreatedLte(createdLte *string) {
 	o.CreatedLte = createdLte
+}
+
+// WithID adds the id to the circuits providers list params
+func (o *CircuitsProvidersListParams) WithID(id *string) *CircuitsProvidersListParams {
+	o.SetID(id)
+	return o
+}
+
+// SetID adds the id to the circuits providers list params
+func (o *CircuitsProvidersListParams) SetID(id *string) {
+	o.ID = id
+}
+
+// WithIDGt adds the iDGt to the circuits providers list params
+func (o *CircuitsProvidersListParams) WithIDGt(iDGt *string) *CircuitsProvidersListParams {
+	o.SetIDGt(iDGt)
+	return o
+}
+
+// SetIDGt adds the idGt to the circuits providers list params
+func (o *CircuitsProvidersListParams) SetIDGt(iDGt *string) {
+	o.IDGt = iDGt
+}
+
+// WithIDGte adds the iDGte to the circuits providers list params
+func (o *CircuitsProvidersListParams) WithIDGte(iDGte *string) *CircuitsProvidersListParams {
+	o.SetIDGte(iDGte)
+	return o
+}
+
+// SetIDGte adds the idGte to the circuits providers list params
+func (o *CircuitsProvidersListParams) SetIDGte(iDGte *string) {
+	o.IDGte = iDGte
+}
+
+// WithIDLt adds the iDLt to the circuits providers list params
+func (o *CircuitsProvidersListParams) WithIDLt(iDLt *string) *CircuitsProvidersListParams {
+	o.SetIDLt(iDLt)
+	return o
+}
+
+// SetIDLt adds the idLt to the circuits providers list params
+func (o *CircuitsProvidersListParams) SetIDLt(iDLt *string) {
+	o.IDLt = iDLt
+}
+
+// WithIDLte adds the iDLte to the circuits providers list params
+func (o *CircuitsProvidersListParams) WithIDLte(iDLte *string) *CircuitsProvidersListParams {
+	o.SetIDLte(iDLte)
+	return o
+}
+
+// SetIDLte adds the idLte to the circuits providers list params
+func (o *CircuitsProvidersListParams) SetIDLte(iDLte *string) {
+	o.IDLte = iDLte
+}
+
+// WithIDn adds the iDn to the circuits providers list params
+func (o *CircuitsProvidersListParams) WithIDn(iDn *string) *CircuitsProvidersListParams {
+	o.SetIDn(iDn)
+	return o
+}
+
+// SetIDn adds the idN to the circuits providers list params
+func (o *CircuitsProvidersListParams) SetIDn(iDn *string) {
+	o.IDn = iDn
 }
 
 // WithLastUpdated adds the lastUpdated to the circuits providers list params
@@ -1143,6 +1221,102 @@ func (o *CircuitsProvidersListParams) WriteToRequest(r runtime.ClientRequest, re
 		qCreatedLte := qrCreatedLte
 		if qCreatedLte != "" {
 			if err := r.SetQueryParam("created__lte", qCreatedLte); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.ID != nil {
+
+		// query param id
+		var qrID string
+		if o.ID != nil {
+			qrID = *o.ID
+		}
+		qID := qrID
+		if qID != "" {
+			if err := r.SetQueryParam("id", qID); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.IDGt != nil {
+
+		// query param id__gt
+		var qrIDGt string
+		if o.IDGt != nil {
+			qrIDGt = *o.IDGt
+		}
+		qIDGt := qrIDGt
+		if qIDGt != "" {
+			if err := r.SetQueryParam("id__gt", qIDGt); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.IDGte != nil {
+
+		// query param id__gte
+		var qrIDGte string
+		if o.IDGte != nil {
+			qrIDGte = *o.IDGte
+		}
+		qIDGte := qrIDGte
+		if qIDGte != "" {
+			if err := r.SetQueryParam("id__gte", qIDGte); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.IDLt != nil {
+
+		// query param id__lt
+		var qrIDLt string
+		if o.IDLt != nil {
+			qrIDLt = *o.IDLt
+		}
+		qIDLt := qrIDLt
+		if qIDLt != "" {
+			if err := r.SetQueryParam("id__lt", qIDLt); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.IDLte != nil {
+
+		// query param id__lte
+		var qrIDLte string
+		if o.IDLte != nil {
+			qrIDLte = *o.IDLte
+		}
+		qIDLte := qrIDLte
+		if qIDLte != "" {
+			if err := r.SetQueryParam("id__lte", qIDLte); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.IDn != nil {
+
+		// query param id__n
+		var qrIDn string
+		if o.IDn != nil {
+			qrIDn = *o.IDn
+		}
+		qIDn := qrIDn
+		if qIDn != "" {
+			if err := r.SetQueryParam("id__n", qIDn); err != nil {
 				return err
 			}
 		}

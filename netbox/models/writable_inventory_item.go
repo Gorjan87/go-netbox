@@ -49,6 +49,8 @@ type WritableInventoryItem struct {
 	Device *int64 `json:"device"`
 
 	// Discovered
+	//
+	// This item was automatically discovered
 	Discovered bool `json:"discovered,omitempty"`
 
 	// ID
@@ -68,6 +70,8 @@ type WritableInventoryItem struct {
 	Parent *int64 `json:"parent,omitempty"`
 
 	// Part ID
+	//
+	// Manufacturer-assigned part identifier
 	// Max Length: 50
 	PartID string `json:"part_id,omitempty"`
 

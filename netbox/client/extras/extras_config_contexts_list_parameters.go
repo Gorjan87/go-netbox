@@ -89,6 +89,18 @@ type ExtrasConfigContextsListParams struct {
 	ClusterID *string
 	/*ClusterIDn*/
 	ClusterIDn *string
+	/*ID*/
+	ID *string
+	/*IDGt*/
+	IDGt *string
+	/*IDGte*/
+	IDGte *string
+	/*IDLt*/
+	IDLt *string
+	/*IDLte*/
+	IDLte *string
+	/*IDn*/
+	IDn *string
 	/*IsActive*/
 	IsActive *string
 	/*Limit
@@ -278,6 +290,72 @@ func (o *ExtrasConfigContextsListParams) WithClusterIDn(clusterIDn *string) *Ext
 // SetClusterIDn adds the clusterIdN to the extras config contexts list params
 func (o *ExtrasConfigContextsListParams) SetClusterIDn(clusterIDn *string) {
 	o.ClusterIDn = clusterIDn
+}
+
+// WithID adds the id to the extras config contexts list params
+func (o *ExtrasConfigContextsListParams) WithID(id *string) *ExtrasConfigContextsListParams {
+	o.SetID(id)
+	return o
+}
+
+// SetID adds the id to the extras config contexts list params
+func (o *ExtrasConfigContextsListParams) SetID(id *string) {
+	o.ID = id
+}
+
+// WithIDGt adds the iDGt to the extras config contexts list params
+func (o *ExtrasConfigContextsListParams) WithIDGt(iDGt *string) *ExtrasConfigContextsListParams {
+	o.SetIDGt(iDGt)
+	return o
+}
+
+// SetIDGt adds the idGt to the extras config contexts list params
+func (o *ExtrasConfigContextsListParams) SetIDGt(iDGt *string) {
+	o.IDGt = iDGt
+}
+
+// WithIDGte adds the iDGte to the extras config contexts list params
+func (o *ExtrasConfigContextsListParams) WithIDGte(iDGte *string) *ExtrasConfigContextsListParams {
+	o.SetIDGte(iDGte)
+	return o
+}
+
+// SetIDGte adds the idGte to the extras config contexts list params
+func (o *ExtrasConfigContextsListParams) SetIDGte(iDGte *string) {
+	o.IDGte = iDGte
+}
+
+// WithIDLt adds the iDLt to the extras config contexts list params
+func (o *ExtrasConfigContextsListParams) WithIDLt(iDLt *string) *ExtrasConfigContextsListParams {
+	o.SetIDLt(iDLt)
+	return o
+}
+
+// SetIDLt adds the idLt to the extras config contexts list params
+func (o *ExtrasConfigContextsListParams) SetIDLt(iDLt *string) {
+	o.IDLt = iDLt
+}
+
+// WithIDLte adds the iDLte to the extras config contexts list params
+func (o *ExtrasConfigContextsListParams) WithIDLte(iDLte *string) *ExtrasConfigContextsListParams {
+	o.SetIDLte(iDLte)
+	return o
+}
+
+// SetIDLte adds the idLte to the extras config contexts list params
+func (o *ExtrasConfigContextsListParams) SetIDLte(iDLte *string) {
+	o.IDLte = iDLte
+}
+
+// WithIDn adds the iDn to the extras config contexts list params
+func (o *ExtrasConfigContextsListParams) WithIDn(iDn *string) *ExtrasConfigContextsListParams {
+	o.SetIDn(iDn)
+	return o
+}
+
+// SetIDn adds the idN to the extras config contexts list params
+func (o *ExtrasConfigContextsListParams) SetIDn(iDn *string) {
+	o.IDn = iDn
 }
 
 // WithIsActive adds the isActive to the extras config contexts list params
@@ -818,6 +896,102 @@ func (o *ExtrasConfigContextsListParams) WriteToRequest(r runtime.ClientRequest,
 		qClusterIDn := qrClusterIDn
 		if qClusterIDn != "" {
 			if err := r.SetQueryParam("cluster_id__n", qClusterIDn); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.ID != nil {
+
+		// query param id
+		var qrID string
+		if o.ID != nil {
+			qrID = *o.ID
+		}
+		qID := qrID
+		if qID != "" {
+			if err := r.SetQueryParam("id", qID); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.IDGt != nil {
+
+		// query param id__gt
+		var qrIDGt string
+		if o.IDGt != nil {
+			qrIDGt = *o.IDGt
+		}
+		qIDGt := qrIDGt
+		if qIDGt != "" {
+			if err := r.SetQueryParam("id__gt", qIDGt); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.IDGte != nil {
+
+		// query param id__gte
+		var qrIDGte string
+		if o.IDGte != nil {
+			qrIDGte = *o.IDGte
+		}
+		qIDGte := qrIDGte
+		if qIDGte != "" {
+			if err := r.SetQueryParam("id__gte", qIDGte); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.IDLt != nil {
+
+		// query param id__lt
+		var qrIDLt string
+		if o.IDLt != nil {
+			qrIDLt = *o.IDLt
+		}
+		qIDLt := qrIDLt
+		if qIDLt != "" {
+			if err := r.SetQueryParam("id__lt", qIDLt); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.IDLte != nil {
+
+		// query param id__lte
+		var qrIDLte string
+		if o.IDLte != nil {
+			qrIDLte = *o.IDLte
+		}
+		qIDLte := qrIDLte
+		if qIDLte != "" {
+			if err := r.SetQueryParam("id__lte", qIDLte); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.IDn != nil {
+
+		// query param id__n
+		var qrIDn string
+		if o.IDn != nil {
+			qrIDn = *o.IDn
+		}
+		qIDn := qrIDn
+		if qIDn != "" {
+			if err := r.SetQueryParam("id__n", qIDn); err != nil {
 				return err
 			}
 		}

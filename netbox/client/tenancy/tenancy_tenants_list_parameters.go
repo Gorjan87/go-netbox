@@ -91,6 +91,18 @@ type TenancyTenantsListParams struct {
 	GroupID *string
 	/*GroupIDn*/
 	GroupIDn *string
+	/*ID*/
+	ID *string
+	/*IDGt*/
+	IDGt *string
+	/*IDGte*/
+	IDGte *string
+	/*IDLt*/
+	IDLt *string
+	/*IDLte*/
+	IDLte *string
+	/*IDn*/
+	IDn *string
 	/*LastUpdated*/
 	LastUpdated *string
 	/*LastUpdatedGte*/
@@ -267,6 +279,72 @@ func (o *TenancyTenantsListParams) WithGroupIDn(groupIDn *string) *TenancyTenant
 // SetGroupIDn adds the groupIdN to the tenancy tenants list params
 func (o *TenancyTenantsListParams) SetGroupIDn(groupIDn *string) {
 	o.GroupIDn = groupIDn
+}
+
+// WithID adds the id to the tenancy tenants list params
+func (o *TenancyTenantsListParams) WithID(id *string) *TenancyTenantsListParams {
+	o.SetID(id)
+	return o
+}
+
+// SetID adds the id to the tenancy tenants list params
+func (o *TenancyTenantsListParams) SetID(id *string) {
+	o.ID = id
+}
+
+// WithIDGt adds the iDGt to the tenancy tenants list params
+func (o *TenancyTenantsListParams) WithIDGt(iDGt *string) *TenancyTenantsListParams {
+	o.SetIDGt(iDGt)
+	return o
+}
+
+// SetIDGt adds the idGt to the tenancy tenants list params
+func (o *TenancyTenantsListParams) SetIDGt(iDGt *string) {
+	o.IDGt = iDGt
+}
+
+// WithIDGte adds the iDGte to the tenancy tenants list params
+func (o *TenancyTenantsListParams) WithIDGte(iDGte *string) *TenancyTenantsListParams {
+	o.SetIDGte(iDGte)
+	return o
+}
+
+// SetIDGte adds the idGte to the tenancy tenants list params
+func (o *TenancyTenantsListParams) SetIDGte(iDGte *string) {
+	o.IDGte = iDGte
+}
+
+// WithIDLt adds the iDLt to the tenancy tenants list params
+func (o *TenancyTenantsListParams) WithIDLt(iDLt *string) *TenancyTenantsListParams {
+	o.SetIDLt(iDLt)
+	return o
+}
+
+// SetIDLt adds the idLt to the tenancy tenants list params
+func (o *TenancyTenantsListParams) SetIDLt(iDLt *string) {
+	o.IDLt = iDLt
+}
+
+// WithIDLte adds the iDLte to the tenancy tenants list params
+func (o *TenancyTenantsListParams) WithIDLte(iDLte *string) *TenancyTenantsListParams {
+	o.SetIDLte(iDLte)
+	return o
+}
+
+// SetIDLte adds the idLte to the tenancy tenants list params
+func (o *TenancyTenantsListParams) SetIDLte(iDLte *string) {
+	o.IDLte = iDLte
+}
+
+// WithIDn adds the iDn to the tenancy tenants list params
+func (o *TenancyTenantsListParams) WithIDn(iDn *string) *TenancyTenantsListParams {
+	o.SetIDn(iDn)
+	return o
+}
+
+// SetIDn adds the idN to the tenancy tenants list params
+func (o *TenancyTenantsListParams) SetIDn(iDn *string) {
+	o.IDn = iDn
 }
 
 // WithLastUpdated adds the lastUpdated to the tenancy tenants list params
@@ -691,6 +769,102 @@ func (o *TenancyTenantsListParams) WriteToRequest(r runtime.ClientRequest, reg s
 		qGroupIDn := qrGroupIDn
 		if qGroupIDn != "" {
 			if err := r.SetQueryParam("group_id__n", qGroupIDn); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.ID != nil {
+
+		// query param id
+		var qrID string
+		if o.ID != nil {
+			qrID = *o.ID
+		}
+		qID := qrID
+		if qID != "" {
+			if err := r.SetQueryParam("id", qID); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.IDGt != nil {
+
+		// query param id__gt
+		var qrIDGt string
+		if o.IDGt != nil {
+			qrIDGt = *o.IDGt
+		}
+		qIDGt := qrIDGt
+		if qIDGt != "" {
+			if err := r.SetQueryParam("id__gt", qIDGt); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.IDGte != nil {
+
+		// query param id__gte
+		var qrIDGte string
+		if o.IDGte != nil {
+			qrIDGte = *o.IDGte
+		}
+		qIDGte := qrIDGte
+		if qIDGte != "" {
+			if err := r.SetQueryParam("id__gte", qIDGte); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.IDLt != nil {
+
+		// query param id__lt
+		var qrIDLt string
+		if o.IDLt != nil {
+			qrIDLt = *o.IDLt
+		}
+		qIDLt := qrIDLt
+		if qIDLt != "" {
+			if err := r.SetQueryParam("id__lt", qIDLt); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.IDLte != nil {
+
+		// query param id__lte
+		var qrIDLte string
+		if o.IDLte != nil {
+			qrIDLte = *o.IDLte
+		}
+		qIDLte := qrIDLte
+		if qIDLte != "" {
+			if err := r.SetQueryParam("id__lte", qIDLte); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.IDn != nil {
+
+		// query param id__n
+		var qrIDn string
+		if o.IDn != nil {
+			qrIDn = *o.IDn
+		}
+		qIDn := qrIDn
+		if qIDn != "" {
+			if err := r.SetQueryParam("id__n", qIDn); err != nil {
 				return err
 			}
 		}
